@@ -156,7 +156,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Class\Analysis\TimeSeries\TimeSeries_Arima.cs" />
+    <Compile Include="Class\Analysis\TimeSeries\TimeSeries_Garch.cs" />
+    <Compile Include="Class\Analysis\TimeSeries\TimeSeries_HoltWinters.cs" />
+    <Compile Include="Class\Analysis\TimeSeries\TimeSeries_Standard.cs" />
     <Compile Include="Class\BertCalls.cs" />
+    <Compile Include="Class\Validations.cs" />
     <Compile Include="DataBase\DataBaseConection.cs" />
     <Compile Include="DataBase\DataBaseWindow.cs">
       <SubType>Form</SubType>
@@ -208,7 +213,10 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Class\Analysis\NonparametricAnalysis\" />
+    <Folder Include="Class\Analysis\ParametricAnalysis\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

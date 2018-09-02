@@ -25,10 +25,17 @@ namespace ExcelAddIn
         {
         }
 
-        public void BertCall(string functionName, String dataRange)//dont forget to 
+        public void BertCall(string functionName, String dataRange)
         {
-            double resultado = Application.Run("BERT.Call", functionName, getCurrentWorkSheet().Range[dataRange] );
-            MessageBox.Show(resultado.ToString());
+            if(dataRange.Equals("00:00"))
+            {
+                MessageBox.Show("Blank cells were found, pleace fill it and try again");
+            }
+            else
+            {
+                double resultado = Application.Run("BERT.Call", functionName, getCurrentWorkSheet().Range[dataRange]);
+                MessageBox.Show(resultado.ToString());
+            }
         }
 
         private Worksheet getCurrentWorkSheet()
@@ -37,9 +44,5 @@ namespace ExcelAddIn
             this.Application.ActiveWorkbook.Worksheets[1]);
             return currentWorksheet;
         }
-
-
-
-
     }
 }
