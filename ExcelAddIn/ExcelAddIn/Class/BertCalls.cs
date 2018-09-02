@@ -12,10 +12,20 @@ namespace ExcelAddIn.Class
 {
     class BertCalls
     {
-    public void Sumar()
+        public string getRange()//need to validate the non data cells
         {
-            Excel.Range selection = Globals.ThisAddIn.Application.Selection as Excel.Range;//esto esta en prueba
-            Globals.ThisAddIn.BertCall("sum", "A1:A5");
+            Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
+            return selectedRange.Address.ToString();
+        }
+
+        public void bertCalls(string functionName)
+        {
+            Globals.ThisAddIn.BertCall(functionName, getRange());
+        }
+
+        public void Sumar()
+        {
+            bertCalls("sum");
         }
 
     }
