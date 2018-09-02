@@ -30,3 +30,17 @@ C:\Users\Nelson\Documents\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.cspro
 C:\Users\Nelson\Documents\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
 C:\Users\Nelson\Documents\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.dll
 C:\Users\Nelson\Documents\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.pdb
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll.manifest
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.vsto
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csprojAssemblyReference.cache
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.DataBaseWindow.resources
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Properties.Resources.resources
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Ribbon1.resources
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.GenerateResource.cache
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CoreCompileInputs.cache
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.dll
+C:\Users\josue\OneDrive\Documentos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb
