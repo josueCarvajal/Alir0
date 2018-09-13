@@ -38,21 +38,24 @@
             this.RiALIRO = this.Factory.CreateRibbonGroup();
             this.btnDataBase = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.btnColumn = this.Factory.CreateRibbonButton();
+            this.btnCircle = this.Factory.CreateRibbonButton();
+            this.mCharts = this.Factory.CreateRibbonMenu();
             this.tab1.SuspendLayout();
             this.RiALIRO.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
-            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.RiALIRO);
-            this.tab1.Label = "TabAddIns";
+            this.tab1.Label = "Aliro";
             this.tab1.Name = "tab1";
             // 
             // RiALIRO
             // 
             this.RiALIRO.Items.Add(this.btnDataBase);
             this.RiALIRO.Items.Add(this.button1);
+            this.RiALIRO.Items.Add(this.mCharts);
             this.RiALIRO.Label = "ALIRO";
             this.RiALIRO.Name = "RiALIRO";
             // 
@@ -66,6 +69,27 @@
             this.button1.Label = "button1";
             this.button1.Name = "button1";
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            // 
+            // btnColumn
+            // 
+            this.btnColumn.Label = "Column";
+            this.btnColumn.Name = "btnColumn";
+            this.btnColumn.ShowImage = true;
+            this.btnColumn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnColumn_Click);
+            // 
+            // btnCircle
+            // 
+            this.btnCircle.Label = "Circle";
+            this.btnCircle.Name = "btnCircle";
+            this.btnCircle.ShowImage = true;
+            this.btnCircle.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnCircle_Click);
+            // 
+            // mCharts
+            // 
+            this.mCharts.Items.Add(this.btnColumn);
+            this.mCharts.Items.Add(this.btnCircle);
+            this.mCharts.Label = "Charts";
+            this.mCharts.Name = "mCharts";
             // 
             // Ribbon1
             // 
@@ -87,6 +111,9 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup RiALIRO;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDataBase;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnColumn;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnCircle;
+        internal Microsoft.Office.Tools.Ribbon.RibbonMenu mCharts;
     }
 
     partial class ThisRibbonCollection
