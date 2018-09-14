@@ -33,7 +33,7 @@ namespace ExcelAddIn
             }
             else
             {
-                double resultado = Application.Run("BERT.Call", functionName, getCurrentWorkSheet().Range[dataRange]);
+                object resultado = Application.Run("BERT.Call", functionName, getCurrentWorkSheet().Range[dataRange]);
                 MessageBox.Show(resultado.ToString());
             }
         }

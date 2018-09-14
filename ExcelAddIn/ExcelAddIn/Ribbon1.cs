@@ -40,12 +40,17 @@ namespace ExcelAddIn
             count = count + 1;
             Excel.Range selection = Globals.ThisAddIn.Application.Selection as Excel.Range;
 
-            Worksheet worksheet = Globals.Factory.GetVstoObject(
-            Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet);
+            Worksheet worksheet = Globals.Factory.GetVstoObject(Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet);
 
             Chart chart = worksheet.Controls.AddChart(selection, "employees" + count);
-            chart.ChartType = Microsoft.Office.Interop.Excel.XlChartType.xl3DPie;
+            chart.ChartType = Microsoft.Office.Interop.Excel.XlChartType.xl3DColumn;
             chart.SetSourceData(selection);
+        }
+
+        private void btnHistogram_Click(object sender, RibbonControlEventArgs e)
+        {            
+            Class.BertCalls bert = new Class.BertCalls();
+            bert.Histogram();
         }
     }
 }

@@ -37,9 +37,6 @@ namespace ExcelAddIn.Class
             {
                 return selectedRange.Address.ToString();
             }
-
-
-
         }
 
         public double getFilledCells(Excel.Range selectedRange)

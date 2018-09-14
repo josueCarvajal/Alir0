@@ -38,9 +38,10 @@
             this.RiALIRO = this.Factory.CreateRibbonGroup();
             this.btnDataBase = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.mCharts = this.Factory.CreateRibbonMenu();
             this.btnColumn = this.Factory.CreateRibbonButton();
             this.btnCircle = this.Factory.CreateRibbonButton();
-            this.mCharts = this.Factory.CreateRibbonMenu();
+            this.btnHistogram = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.RiALIRO.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +71,14 @@
             this.button1.Name = "button1";
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
+            // mCharts
+            // 
+            this.mCharts.Items.Add(this.btnColumn);
+            this.mCharts.Items.Add(this.btnCircle);
+            this.mCharts.Items.Add(this.btnHistogram);
+            this.mCharts.Label = "Charts";
+            this.mCharts.Name = "mCharts";
+            // 
             // btnColumn
             // 
             this.btnColumn.Label = "Column";
@@ -84,12 +93,12 @@
             this.btnCircle.ShowImage = true;
             this.btnCircle.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnCircle_Click);
             // 
-            // mCharts
+            // btnHistogram
             // 
-            this.mCharts.Items.Add(this.btnColumn);
-            this.mCharts.Items.Add(this.btnCircle);
-            this.mCharts.Label = "Charts";
-            this.mCharts.Name = "mCharts";
+            this.btnHistogram.Label = "Histogram";
+            this.btnHistogram.Name = "btnHistogram";
+            this.btnHistogram.ShowImage = true;
+            this.btnHistogram.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnHistogram_Click);
             // 
             // Ribbon1
             // 
@@ -114,6 +123,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnColumn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnCircle;
         internal Microsoft.Office.Tools.Ribbon.RibbonMenu mCharts;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHistogram;
     }
 
     partial class ThisRibbonCollection

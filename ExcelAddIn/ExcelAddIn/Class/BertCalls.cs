@@ -25,5 +25,11 @@ namespace ExcelAddIn.Class
             bertCalls("sum");
         }
 
+        public void Histogram()
+        {
+            Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
+            bertCalls("hist");
+        }
+
     }
 }
