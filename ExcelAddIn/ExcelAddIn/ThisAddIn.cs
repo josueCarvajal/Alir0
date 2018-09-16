@@ -33,16 +33,15 @@ namespace ExcelAddIn
             }
             else
             {
-                object resultado = Application.Run("BERT.Call", functionName, getCurrentWorkSheet().Range[dataRange]);
+                object resultado = Application.Run("BERT.Call", functionName, getCurrentActiveSheet().Range[dataRange]);
                 MessageBox.Show(resultado.ToString());
             }
         }
 
-        private Worksheet getCurrentWorkSheet()
+        private Excel.Worksheet getCurrentActiveSheet()
         {
-            Worksheet currentWorksheet = Globals.Factory.GetVstoObject(
-            this.Application.ActiveWorkbook.Worksheets[1]);
-            return currentWorksheet;
+            Excel.Workbook currentWorkBook = this.Application.ActiveWorkbook;
+            return currentWorkBook.ActiveSheet;
         }
     }
 }

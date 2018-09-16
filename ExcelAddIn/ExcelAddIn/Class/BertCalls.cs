@@ -19,15 +19,24 @@ namespace ExcelAddIn.Class
             Globals.ThisAddIn.BertCall(functionName, validate.getRange());
         }
 
-        public void Sumar() //this method is just used here to TEST. Each function will be called from the respective class
-        {
-            Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
-            bertCalls("sum");
-        }
 
+
+
+
+
+
+
+        //R functions must be saved at local C:\Users\josue\Documents as BERT2 folder carefull with OneDrive/Documents.
+
+        /*
+         //this methods is just used here to TEST. Each function will be called from the respective class
+        */
+        public void Sumar() 
+        {
+            bertCalls("suma");
+        }
         public void Histogram()
         {
-            Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
             bertCalls("hist");
         }
 
