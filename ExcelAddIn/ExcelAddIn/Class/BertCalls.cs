@@ -20,12 +20,6 @@ namespace ExcelAddIn.Class
         }
 
 
-
-
-
-
-
-
         //R functions must be saved at local C:\Users\josue\Documents as BERT2 folder carefull with OneDrive/Documents.
 
         /*
@@ -37,8 +31,7 @@ namespace ExcelAddIn.Class
         }
         public void Histogram()
         {
-            bertCalls("hist");
+            bertCalls("histogram");
         }
-
     }
 }

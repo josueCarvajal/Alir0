@@ -23,6 +23,12 @@ namespace ExcelAddIn
             bert.Sumar();
         }
 
+        private void btnHistogram_Click(object sender, RibbonControlEventArgs e)
+        {
+            Class.BertCalls bert = new Class.BertCalls();
+            bert.Histogram();
+        }
+
         private void btnColumn_Click(object sender, RibbonControlEventArgs e)
         {
             count = count + 1;
@@ -33,24 +39,6 @@ namespace ExcelAddIn
             Chart chart = worksheet.Controls.AddChart(selection, "employees" + count);
             chart.ChartType = Microsoft.Office.Interop.Excel.XlChartType.xl3DColumn;
             chart.SetSourceData(selection);
-        }
-
-        private void btnCircle_Click(object sender, RibbonControlEventArgs e)
-        {
-            count = count + 1;
-            Excel.Range selection = Globals.ThisAddIn.Application.Selection as Excel.Range;
-
-            Worksheet worksheet = Globals.Factory.GetVstoObject(Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet);
-
-            Chart chart = worksheet.Controls.AddChart(selection, "employees" + count);
-            chart.ChartType = Microsoft.Office.Interop.Excel.XlChartType.xl3DColumn;
-            chart.SetSourceData(selection);
-        }
-
-        private void btnHistogram_Click(object sender, RibbonControlEventArgs e)
-        {            
-            Class.BertCalls bert = new Class.BertCalls();
-            bert.Histogram();
-        }
+        }       
     }
 }
