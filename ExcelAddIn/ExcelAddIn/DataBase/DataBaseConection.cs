@@ -12,8 +12,6 @@ namespace ExcelAddIn.DataBase
 {
     class DataBaseConection
     {
-
-
         string servidor;
 
         public DataBaseConection()
@@ -56,7 +54,6 @@ namespace ExcelAddIn.DataBase
             return listaservidores;
         }
 
-
         public string[] InstalledInstances()
         {
             Microsoft.Win32.RegistryKey rk;
@@ -65,7 +62,6 @@ namespace ExcelAddIn.DataBase
             s = ((string[])rk.GetValue("InstalledInstances"));
             return s;
         }
-
 
         public String[] InstalledDataBase(string instances)
         {
@@ -114,9 +110,7 @@ namespace ExcelAddIn.DataBase
             }
             return null;
         }
-
-
-       
+ 
         public List<String> TablesInDataBase(string instances, string dataBase)
         {
             List<string> result = new List<string>();
@@ -132,11 +126,9 @@ namespace ExcelAddIn.DataBase
             conexion.Open();
             return conexion;
         }
-
-
+        
         public List<string> GetColumnsOfTable(string instances, string dataBase, string tableName)
         {
-
             List<string> colList = new List<string>();
             DataTable dataTable = new DataTable();
 
@@ -149,7 +141,6 @@ namespace ExcelAddIn.DataBase
                 foreach (DataColumn col in dataTable.Columns)
                 {
                     colList.Add(col.ColumnName);
-                    MessageBox.Show(col.ColumnName);
                 }
             }
             return colList;

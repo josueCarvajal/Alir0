@@ -37,13 +37,13 @@
             this.btnQuery = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbInstances = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.LbSelectedColumns = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +99,7 @@
             this.cbColumn.Name = "cbColumn";
             this.cbColumn.Size = new System.Drawing.Size(163, 21);
             this.cbColumn.TabIndex = 4;
+            this.cbColumn.SelectedIndexChanged += new System.EventHandler(this.cbColumn_SelectedIndexChanged);
             // 
             // btnQuery
             // 
@@ -128,14 +129,6 @@
             this.cbInstances.TabIndex = 7;
             this.cbInstances.SelectedIndexChanged += new System.EventHandler(this.cbInstances_SelectedIndexChanged_1);
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(201, 41);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(122, 197);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -147,9 +140,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.LbSelectedColumns);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.CbDataBaseName);
-            this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.btnQuery);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
@@ -195,6 +188,14 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Password";
             // 
+            // LbSelectedColumns
+            // 
+            this.LbSelectedColumns.FormattingEnabled = true;
+            this.LbSelectedColumns.Location = new System.Drawing.Point(201, 41);
+            this.LbSelectedColumns.Name = "LbSelectedColumns";
+            this.LbSelectedColumns.Size = new System.Drawing.Size(160, 186);
+            this.LbSelectedColumns.TabIndex = 11;
+            // 
             // DataBaseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,12 +226,12 @@
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbInstances;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox LbSelectedColumns;
     }
 }
