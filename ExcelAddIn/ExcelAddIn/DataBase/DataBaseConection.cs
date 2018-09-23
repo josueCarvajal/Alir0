@@ -118,12 +118,10 @@ namespace ExcelAddIn.DataBase
 
         public DataTable TablesInDataBase(string instances, string dataBase)
         {
-
             SqlDataAdapter adapter = new SqlDataAdapter("select* from information_schema.tables", OpenConection(instances, dataBase));
             DataTable tables = new DataTable("tables");
             adapter.Fill(tables);
             return tables;
-
         }
 
         public SqlConnection OpenConection(string instances, string dataBase)
@@ -133,6 +131,27 @@ namespace ExcelAddIn.DataBase
             return conexion;
         }
 
+
+        public List<string> GetColumnsOfTable(string instances, string dataBase,string tableName)
+        {
+
+         List<string> colList = new List<string>();
+         DataTable dataTable = new DataTable();
+
+            string cmdString = String.Format("SELECT TOP 0 * FROM {0}", tableName);
+        
+              using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
+               {
+                  dataContent.Fill(dataTable);
+
+                  foreach (DataColumn col in dataTable.Columns)
+                   {
+                      colList.Add(col.ColumnName);
+                    MessageBox.Show(col.ColumnName);
+                   }
+               }
+         return colList;
+        }
 
 
     }
