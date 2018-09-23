@@ -82,7 +82,7 @@ namespace ExcelAddIn.DataBase
             string DataBase = CbDataBaseName.SelectedItem.ToString();
 
             cbTableName.DataSource = Conection.TablesInDataBase(Instances, DataBase);
-            cbTableName.ValueMember = "table_name";
+           // cbTableName.ValueMember = "table_name";
             // AddTablesTocbTablesName(cbInstances.SelectedItem.ToString(), CbDataBaseName.SelectedItem.ToString());
         }
 
@@ -92,7 +92,7 @@ namespace ExcelAddIn.DataBase
             string DataBase = CbDataBaseName.SelectedItem.ToString();
             string Table= cbTableName.SelectedItem.ToString();
 
-           // cbColumn.DataSource = Conection.GetColumnsOfTable(Instances, DataBase, Table);
+           cbColumn.DataSource = Conection.GetColumnsOfTable(Instances, DataBase, Table);
 
         }
     }

@@ -13,13 +13,13 @@ namespace ExcelAddIn.DataBase
     class DataBaseConection
     {
 
-       
+
         string servidor;
 
         public DataBaseConection()
         {
             //servidores = SqlDataSourceEnumerator.Instance;
-           // tablaservidores = new DataTable();
+            // tablaservidores = new DataTable();
         }
 
         public List<String> Installedinstances()
@@ -31,28 +31,28 @@ namespace ExcelAddIn.DataBase
 
             servidores = SqlDataSourceEnumerator.Instance;
             tablaservidores = new DataTable();
-          
-                // Obtenemos un dataTable con la información sobre las instancias visibles
-                // de SQL Server 2000 y 2005
-                tablaservidores = servidores.GetDataSources();
-                // Creamos una lista para que sea el origen de datos del combobox
-                listaservidores = new List<string>();
-                // Recorremos el dataTable y añadimos un valor nuevo a la lista con cada fila
-                foreach (DataRow rowServidor in tablaservidores.Rows)
-                {
-                    // La instancia de SQL Server puede tener nombre de instancia 
-                    //o únicamente el nombre del servidor, comprobamos si hay 
-                    //nombre de instancia para mostrarlo
-                    if (String.IsNullOrEmpty(rowServidor["InstanceName"].ToString()))
-                        listaservidores.Add(rowServidor["ServerName"].ToString());
-                    else
-                        listaservidores.Add(rowServidor["ServerName"] + "\\" + rowServidor["InstanceName"]);
-                }
 
-                // Asignamos al origen de datos del combobox la lista con 
-                // las instancias de servidores
-                // cbInstances.DataSource = listaservidores;
-            
+            // Obtenemos un dataTable con la información sobre las instancias visibles
+            // de SQL Server 2000 y 2005
+            tablaservidores = servidores.GetDataSources();
+            // Creamos una lista para que sea el origen de datos del combobox
+            listaservidores = new List<string>();
+            // Recorremos el dataTable y añadimos un valor nuevo a la lista con cada fila
+            foreach (DataRow rowServidor in tablaservidores.Rows)
+            {
+                // La instancia de SQL Server puede tener nombre de instancia 
+                //o únicamente el nombre del servidor, comprobamos si hay 
+                //nombre de instancia para mostrarlo
+                if (String.IsNullOrEmpty(rowServidor["InstanceName"].ToString()))
+                    listaservidores.Add(rowServidor["ServerName"].ToString());
+                else
+                    listaservidores.Add(rowServidor["ServerName"] + "\\" + rowServidor["InstanceName"]);
+            }
+
+            // Asignamos al origen de datos del combobox la lista con 
+            // las instancias de servidores
+            // cbInstances.DataSource = listaservidores;
+
             return listaservidores;
         }
 
@@ -116,14 +116,16 @@ namespace ExcelAddIn.DataBase
         }
 
 
-        public DataTable TablesInDataBase(string instances, string dataBase)
+       
+        public List<String> TablesInDataBase(string instances, string dataBase)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("select* from information_schema.tables", OpenConection(instances, dataBase));
-            DataTable tables = new DataTable("tables");
-            adapter.Fill(tables);
-            return tables;
+            List<string> result = new List<string>();
+            SqlCommand cmd = new SqlCommand("SELECT name FROM sys.Tables", OpenConection(instances, dataBase));
+            System.Data.SqlClient.SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+                result.Add(reader["name"].ToString());
+            return result;
         }
-
         public SqlConnection OpenConection(string instances, string dataBase)
         {
             SqlConnection conexion = new SqlConnection("Data Source=" + instances + "; Initial Catalog=" + dataBase + "; Integrated Security = True");
@@ -132,28 +134,27 @@ namespace ExcelAddIn.DataBase
         }
 
 
-        public List<string> GetColumnsOfTable(string instances, string dataBase,string tableName)
+        public List<string> GetColumnsOfTable(string instances, string dataBase, string tableName)
         {
 
-         List<string> colList = new List<string>();
-         DataTable dataTable = new DataTable();
+            List<string> colList = new List<string>();
+            DataTable dataTable = new DataTable();
 
             string cmdString = String.Format("SELECT TOP 0 * FROM {0}", tableName);
-        
-              using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
-               {
-                  dataContent.Fill(dataTable);
 
-                  foreach (DataColumn col in dataTable.Columns)
-                   {
-                      colList.Add(col.ColumnName);
+            using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
+            {
+                dataContent.Fill(dataTable);
+
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    colList.Add(col.ColumnName);
                     MessageBox.Show(col.ColumnName);
-                   }
-               }
-         return colList;
+                }
+            }
+            return colList;
         }
-
-
+        
     }
 }
 
