@@ -18,7 +18,7 @@ namespace ExcelAddIn.DataBase
         {
             InitializeComponent();
            AddInstancesTocbInstances();
-            MessageBox.Show("r");
+           
         }
 
         private void btnQuery_Click(object sender, EventArgs e)
@@ -31,18 +31,6 @@ namespace ExcelAddIn.DataBase
 
             this.Show();
 
-            /* string[] instancias;
-             instancias = Conection.InstalledInstances();
-             foreach (string s in instancias)
-             {
-                 /* if (s == "MSSQLSERVER")
-                  {
-                      cbInstances.Items.Add("(local)");
-                  }
-                  else
-                  {*/
-            //cbInstances.Items.Add(@"(local)\" + s);
-            // }
             cbInstances.DataSource = Conection.Installedinstances();
 
 
@@ -73,15 +61,6 @@ namespace ExcelAddIn.DataBase
             }
         }
 
-        private void AddColumnsTocbColumns(string Instances, string Database,string table)
-        {
-            cbColumn.DataSource = Conection.ColumnsOfTable(Instances, Database, table);
-            cbColumn.ValueMember = "columns_name";
-
-        }
-
-
-
         private void cbInstances_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             AddDataBasesTocbDataBase(cbInstances.SelectedItem.ToString());
@@ -95,7 +74,7 @@ namespace ExcelAddIn.DataBase
 
         private void cbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AddColumnsTocbColumns(cbInstances.SelectedItem.ToString(), CbDataBaseName.SelectedItem.ToString(), cbTableName.SelectedItem.ToString());
+           
         }
     }
 }

@@ -58,3 +58,17 @@ C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csp
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.dll
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.pdb
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll.manifest
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.vsto
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csprojAssemblyReference.cache
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.DataBaseWindow.resources
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Properties.Resources.resources
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Ribbon1.resources
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.GenerateResource.cache
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CoreCompileInputs.cache
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.dll
+C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb

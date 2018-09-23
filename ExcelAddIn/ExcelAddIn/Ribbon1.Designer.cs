@@ -39,8 +39,8 @@
             this.btnDataBase = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
             this.mCharts = this.Factory.CreateRibbonMenu();
-            this.btnHistogram = this.Factory.CreateRibbonButton();
             this.btnColumn = this.Factory.CreateRibbonButton();
+            this.btnHistogram = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.RiALIRO.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,7 @@
             // 
             this.btnDataBase.Label = "SQL Query";
             this.btnDataBase.Name = "btnDataBase";
+            this.btnDataBase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDataBase_Click);
             // 
             // button1
             // 
@@ -77,19 +78,19 @@
             this.mCharts.Label = "Charts";
             this.mCharts.Name = "mCharts";
             // 
-            // btnHistogram
-            // 
-            this.btnHistogram.Label = "Histogram";
-            this.btnHistogram.Name = "btnHistogram";
-            this.btnHistogram.ShowImage = true;
-            this.btnHistogram.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnHistogram_Click);
-            // 
             // btnColumn
             // 
             this.btnColumn.Label = "Column";
             this.btnColumn.Name = "btnColumn";
             this.btnColumn.ShowImage = true;
             this.btnColumn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnColumn_Click);
+            // 
+            // btnHistogram
+            // 
+            this.btnHistogram.Label = "Histogram";
+            this.btnHistogram.Name = "btnHistogram";
+            this.btnHistogram.ShowImage = true;
+            this.btnHistogram.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnHistogram_Click);
             // 
             // Ribbon1
             // 

@@ -116,20 +116,6 @@ namespace ExcelAddIn.DataBase
         }
 
 
-        public DataTable ColumnsOfTable(string instances, string dataBase, string Table) {
-          //  string sCnn = "Server=" + instances + "; database=master; integrated security=yes";
-
-            // La orden T-SQL para recuperar las bases de master
-            
-           // var columnNames = ctx.ExecuteQuery<string>("SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('your table name');");
-
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('your table name');", OpenConection(instances, dataBase));
-            DataTable columns = new DataTable("columns");
-            adapter.Fill(columns);
-          
-            return columns;
-        }
-
         public DataTable TablesInDataBase(string instances, string dataBase)
         {
 

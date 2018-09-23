@@ -39,6 +39,11 @@ namespace ExcelAddIn
             Chart chart = worksheet.Controls.AddChart(selection, "employees" + count);
             chart.ChartType = Microsoft.Office.Interop.Excel.XlChartType.xl3DColumn;
             chart.SetSourceData(selection);
-        }       
+        }
+
+        private void btnDataBase_Click(object sender, RibbonControlEventArgs e)
+        {
+            DataBase.DataBaseWindow window = new DataBase.DataBaseWindow();
+        }
     }
 }
