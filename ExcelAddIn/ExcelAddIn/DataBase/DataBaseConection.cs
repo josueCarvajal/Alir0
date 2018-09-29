@@ -145,7 +145,27 @@ namespace ExcelAddIn.DataBase
             }
             return colList;
         }
-        
+        public List<string> SQLQueryToColumn(string instances, string dataBase, string tableName,string column)
+        {
+            List<string> SQLquery = new List<string>();
+            DataTable dataTable = new DataTable();
+
+            string cmdString = String.Format("SELECT {0} FROM  {1}",column, tableName);
+
+            using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
+            {
+                dataContent.Fill(dataTable);
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    foreach (var item in row.ItemArray)
+                    SQLquery.Add(item.ToString());
+                }
+            }
+            return SQLquery;
+
+        }
+
     }
 }
 

@@ -43,7 +43,7 @@ namespace ExcelAddIn
 
         private void btnDataBase_Click(object sender, RibbonControlEventArgs e)
         {
-            DataBase.DataBaseWindow window = new DataBase.DataBaseWindow();
+            DataBase.scfc window = new DataBase.scfc();
         }
     }
 }
