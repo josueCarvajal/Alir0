@@ -43,7 +43,7 @@ namespace ExcelAddIn
             Excel.Workbook currentWorkBook = this.Application.ActiveWorkbook;
             return currentWorkBook.ActiveSheet;
         }
-
+      
         public void FillCellsFromDataBase(List<String> DataBaseQuery) {
                     
             Excel.Worksheet currentWorkBook = getCurrentActiveSheet();
@@ -55,5 +55,6 @@ namespace ExcelAddIn
             
             
         }
+        
     }
 }

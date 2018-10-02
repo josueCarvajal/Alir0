@@ -12,12 +12,11 @@ namespace ExcelAddIn.DataBase
 {
     class DataBaseConection
     {
-        string servidor;
+        
 
         public DataBaseConection()
         {
-            //servidores = SqlDataSourceEnumerator.Instance;
-            // tablaservidores = new DataTable();
+            
         }
 
         public List<String> Installedinstances()

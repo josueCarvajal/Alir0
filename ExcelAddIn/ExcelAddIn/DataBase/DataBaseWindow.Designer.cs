@@ -39,6 +39,7 @@
             this.cbInstances = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.LbSelectedColumns = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnConnect = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -165,6 +166,16 @@
             this.panel1.Size = new System.Drawing.Size(380, 278);
             this.panel1.TabIndex = 11;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(284, 244);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(73, 23);
+            this.btnRemove.TabIndex = 12;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // LbSelectedColumns
             // 
             this.LbSelectedColumns.FormattingEnabled = true;
@@ -227,21 +238,22 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // btnRemove
+            // btnOk
             // 
-            this.btnRemove.Location = new System.Drawing.Point(284, 244);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(73, 23);
-            this.btnRemove.TabIndex = 12;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.btnOk.Location = new System.Drawing.Point(314, 398);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(95, 23);
+            this.btnOk.TabIndex = 16;
+            this.btnOk.Text = "Ok";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // scfc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 399);
+            this.ClientSize = new System.Drawing.Size(439, 433);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "scfc";
@@ -275,5 +287,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnOk;
     }
 }
