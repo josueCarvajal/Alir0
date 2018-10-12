@@ -119,6 +119,12 @@ namespace ExcelAddIn.DataBase
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            if (LbSelectedColumns.Items.Count==0)
+            {
+                MessageBox.Show("You must select a column");
+                return;
+               
+            }
             string Instances = cbInstances.SelectedItem.ToString();
             string DataBase = CbDataBaseName.SelectedItem.ToString();
             string Table = cbTableName.SelectedItem.ToString();
