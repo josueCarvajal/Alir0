@@ -63,7 +63,7 @@ namespace ExcelAddIn.DataBase
 
         private void cbColumn_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<string> SQLquery = new List<string>();
+           /* List<string> SQLquery = new List<string>();
             string Instances = cbInstances.SelectedItem.ToString();
             string DataBase = CbDataBaseName.SelectedItem.ToString();
             string Table = cbTableName.SelectedItem.ToString();
@@ -71,6 +71,7 @@ namespace ExcelAddIn.DataBase
 
             SQLquery = Conection.SQLQueryToColumn(Instances, DataBase, Table, Column);
             Globals.ThisAddIn.FillCellsFromDataBase(SQLquery);
+            */
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -118,8 +119,49 @@ namespace ExcelAddIn.DataBase
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            string Instances = cbInstances.SelectedItem.ToString();
+            string DataBase = CbDataBaseName.SelectedItem.ToString();
+            string Table = cbTableName.SelectedItem.ToString();
+
+            List<string> SQLquery = new List<string>();
+            List<string> ColumnIndex = new List<string>();
+            ColumnIndex.Add("A");
+            ColumnIndex.Add("B");
+            ColumnIndex.Add("C");
+            ColumnIndex.Add("D");
+            ColumnIndex.Add("F");
+            ColumnIndex.Add("G");
+            ColumnIndex.Add("H");
+            ColumnIndex.Add("I");
+            ColumnIndex.Add("J");
+
+
+            for (int i = 0; i < LbSelectedColumns.Items.Count; i++)
+            {
+                SQLquery = Conection.SQLQueryToColumn(Instances, DataBase, Table, LbSelectedColumns.Items[i].ToString());
+                Globals.ThisAddIn.FillCellsFromDataBase(SQLquery,ColumnIndex[i]);
+            }
+           /* foreach (var item in LbSelectedColumns.Items)
+            {
+                
+                SQLquery = Conection.SQLQueryToColumn(Instances, DataBase, Table, item.ToString());
+                Globals.ThisAddIn.FillCellsFromDataBase(SQLquery);
+            }
+            */
 
         }
+
+
+
+
+
+
+      //  ProgressBar bg = new ProgressBar();
+
+        
+
+       
+
     }
 }
 

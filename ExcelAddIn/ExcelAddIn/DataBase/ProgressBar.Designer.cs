@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.progressBarMain = new System.Windows.Forms.ProgressBar();
-            this.backgroundWorkerMain = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // progressBarMain
@@ -39,13 +39,9 @@
             this.progressBarMain.Size = new System.Drawing.Size(223, 37);
             this.progressBarMain.TabIndex = 0;
             // 
-            // backgroundWorkerMain
+            // backgroundWorker1
             // 
-            this.backgroundWorkerMain.WorkerReportsProgress = true;
-            this.backgroundWorkerMain.WorkerSupportsCancellation = true;
-            this.backgroundWorkerMain.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerMain_DoWork);
-            this.backgroundWorkerMain.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerMain_ProgressChanged);
-            this.backgroundWorkerMain.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerMain_RunWorkerCompleted);
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // ProgressBar
             // 
@@ -62,6 +58,6 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBarMain;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerMain;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

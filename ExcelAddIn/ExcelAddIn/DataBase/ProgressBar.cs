@@ -15,24 +15,51 @@ namespace ExcelAddIn.DataBase
         public ProgressBar()
         {
             InitializeComponent();
+           
         }
 
-        private void backgroundWorkerMain_DoWork(object sender, DoWorkEventArgs e)
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }
 
-        private void backgroundWorkerMain_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
 
+        private void bg_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("Completo...");
+            
         }
 
-        private void backgroundWorkerMain_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void bg_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            // Change the value of the ProgressBar to the BackgroundWorker progress.
+            progressBarMain.Value = e.ProgressPercentage;
+            progressBarMain.Step = 1;
+            progressBarMain.Style = ProgressBarStyle.Continuous;
+            progressBarMain.Minimum = 0;
+            progressBarMain.Maximum = 100;
 
+            if (e.ProgressPercentage > 100)
+            {
+                progressBarMain.Value = progressBarMain.Maximum;
+            }
+            else
+            {
+                  progressBarMain.Value = e.ProgressPercentage;
+            }
         }
-        public void DoWork() {
 
+        public void loadWindow()
+        {
+            /*
+            +WorkerReportsProgress = true;
+            bg.ProgressChanged += bg_ProgressChanged;
+            bg.DoWork += bg_DoWork;
+            bg.RunWorkerCompleted += bg_RunWorkerCompleted;
+            bg.RunWorkerAsync();
+            labelProgreso.Visible = true;
+            progressBar1.Visible = true;
+            */
         }
     }
 }
