@@ -29,7 +29,7 @@ namespace ExcelAddIn
         {
             if(dataRange.Equals("00:00"))
             {
-                MessageBox.Show("Blank cells were found, pleace fill it and try again");
+                MessageBox.Show("Please check your empty cells");
             }
             else
             {
@@ -43,7 +43,6 @@ namespace ExcelAddIn
             Excel.Workbook currentWorkBook = this.Application.ActiveWorkbook;
             return currentWorkBook.ActiveSheet;
         }
-      
         public void FillCellsFromDataBase(List<String> DataBaseQuery, String columnindex) {
                     
             Excel.Worksheet currentWorkBook = getCurrentActiveSheet();

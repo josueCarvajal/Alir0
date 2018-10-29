@@ -50,7 +50,6 @@ C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.vsto
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csprojAssemblyReference.cache
-C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.DataBaseWindow.resources
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Properties.Resources.resources
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Ribbon1.resources
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.GenerateResource.cache
@@ -73,3 +72,5 @@ C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\
 C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb
 C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.scfc.resources
 C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources
+C:\Users\josue\source\repos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.scfc.resources
+C:\Users\josue\source\repos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources

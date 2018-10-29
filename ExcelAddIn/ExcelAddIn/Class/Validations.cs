@@ -12,30 +12,35 @@ namespace ExcelAddIn.Class
 {
     class Validations
     {
-        public bool hasEmptyCells(Excel.Range selectedRange)
+        public bool allowEmptyCells(Excel.Range selectedRange)
         {
             double blankCells = Globals.ThisAddIn.Application.WorksheetFunction.CountBlank(selectedRange);
-            if (blankCells == 0)
+            if (blankCells != 0)
             {
-                return false;
+                DialogResult dialogResult = MessageBox.Show("Blank cells were found. \nDo you want to ignore them?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes) //I want to ignore them. NA.OMIT in R is used
+                {
+                    return true;
+                }
+                else if (dialogResult == DialogResult.No) //Nothing to do
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return true;
-            }
+         return true;
         }
 
         public string getRange()
         {
             Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
 
-            if(hasEmptyCells(selectedRange))
+            if(allowEmptyCells(selectedRange))
             {
-                return "00:00"; //message validated at ThisAddIn.cs.
+                return selectedRange.Address.ToString(); 
             }
             else
             {
-                return selectedRange.Address.ToString();
+                return "00:00"; //message validated at ThisAddIn.cs.
             }
         }
 
