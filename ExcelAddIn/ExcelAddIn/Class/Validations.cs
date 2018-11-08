@@ -12,41 +12,62 @@ namespace ExcelAddIn.Class
 {
     class Validations
     {
-        public bool allowEmptyCells(Excel.Range selectedRange)
-        {
-            double blankCells = Globals.ThisAddIn.Application.WorksheetFunction.CountBlank(selectedRange);
-            if (blankCells != 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Blank cells were found. \nDo you want to ignore them?", "Warning", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes) //I want to ignore them. NA.OMIT in R is used
-                {
-                    return true;
-                }
-                else if (dialogResult == DialogResult.No) //Nothing to do
-                {
-                    return false;
-                }
-            }
-         return true;
-        }
-
         public string getRange()
         {
             Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
-
-            if(allowEmptyCells(selectedRange))
-            {
-                return selectedRange.Address.ToString(); 
-            }
-            else
-            {
-                return "00:00"; //message validated at ThisAddIn.cs.
-            }
+          return selectedRange.Address.ToString(); 
         }
 
         public double getFilledCells(Excel.Range selectedRange)
         {
             return Globals.ThisAddIn.Application.WorksheetFunction.CountA(selectedRange);
         }
+
+        public int getNumberOfVectors(string nameOfAnalysis, String[,] vectors)
+        {
+            for(int i=0; i<10;i++)
+            {
+                string analysisName = vectors[i,0];
+                if (analysisName.Equals(nameOfAnalysis))
+                {
+                    int number = Convert.ToInt16(vectors[i, 1]);
+                    return number;
+                }
+            }
+            return 0;
+        }
+        public string getFunctionName(string nameOfAnalysis,string[,] vectors)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                string analysisName = vectors[i, 0];
+                if (analysisName.Equals(nameOfAnalysis))
+                {
+                    string functionName= vectors[i, 1];
+                    return functionName;
+                }
+            }
+            return "";
+        }
+
+
+        //not programed yet
+        public string getNameOfVectors(string nameOfAnalysis, String[,] vectors)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                string analysisName = vectors[i, 0];
+                if (analysisName.Equals(nameOfAnalysis))
+                {
+                    int number = Convert.ToInt16(vectors[i, 1]);
+                    return "";
+                }
+            }
+            return "";
+        }
+
+
+
     }
+
 }
