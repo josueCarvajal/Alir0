@@ -156,6 +156,24 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Class\Analysis\AnalysisGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\Analysis\AnalysisGUI.Designer.cs">
+      <DependentUpon>AnalysisGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Analysis\Forms\VectorInputs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\Analysis\Forms\VectorInputs.Designer.cs">
+      <DependentUpon>VectorInputs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Analysis\NonparametricAnalysis\CrossSectional.cs" />
+    <Compile Include="Class\Analysis\ParametricAnalysis\BinaryVariableModels.cs" />
+    <Compile Include="Class\Analysis\ParametricAnalysis\ClusterAnalysis.cs" />
+    <Compile Include="Class\Analysis\ParametricAnalysis\DecisionTrees.cs" />
+    <Compile Include="Class\Analysis\ParametricAnalysis\DiscriminantAnalysis.cs" />
+    <Compile Include="Class\Analysis\ParametricAnalysis\RandomForest.cs" />
     <Compile Include="Class\Analysis\TimeSeries\TimeSeries_Arima.cs" />
     <Compile Include="Class\Analysis\TimeSeries\TimeSeries_Garch.cs" />
     <Compile Include="Class\Analysis\TimeSeries\TimeSeries_HoltWinters.cs" />
@@ -178,6 +196,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="Class\Analysis\AnalysisGUI.resx">
+      <DependentUpon>AnalysisGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class\Analysis\Forms\VectorInputs.resx">
+      <DependentUpon>VectorInputs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataBase\DataBaseWindow.resx">
       <DependentUpon>DataBaseWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,9 +216,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ribbon1.resx">
-      <DependentUpon>Ribbon1.cs</DependentUpon>
+    <EmbeddedResource Include="MunuBar.resx">
+      <DependentUpon>MunuBar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ExcelAddIn_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -205,11 +230,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Ribbon1.cs">
+    <Compile Include="MunuBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Ribbon1.Designer.cs">
-      <DependentUpon>Ribbon1.cs</DependentUpon>
+    <Compile Include="MunuBar.Designer.cs">
+      <DependentUpon>MunuBar.cs</DependentUpon>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -223,8 +248,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Class\Analysis\NonparametricAnalysis\" />
-    <Folder Include="Class\Analysis\ParametricAnalysis\" />
+    <None Include="Resources\matrix.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

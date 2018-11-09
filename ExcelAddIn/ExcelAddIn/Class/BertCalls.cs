@@ -12,26 +12,11 @@ namespace ExcelAddIn.Class
 {
     class BertCalls
     {
-        Validations validate = new Validations();
 
-        public void bertCalls(string functionName)
+        public void bertCalls(string functionName,string[] range)
         {
-            Globals.ThisAddIn.BertCall(functionName, validate.getRange());
+            Globals.ThisAddIn.BertCallTEST(functionName, range);
         }
 
-
-        //R functions must be saved at local C:\Users\josue\Documents as BERT2 folder carefull with OneDrive/Documents.
-
-        /*
-         //this methods is just used here to TEST. Each function will be called from the respective class
-        */
-        public void Sumar() 
-        {
-            bertCalls("suma");
-        }
-        public void Histogram()
-        {
-            bertCalls("histogram");
-        }
     }
 }

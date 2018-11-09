@@ -38,11 +38,61 @@ namespace ExcelAddIn
             }
         }
 
+        public void BertCallTEST(string functionName, string[] dataRangeParameters)
+        {
+            object resultado = 0; ;
+            if (dataRangeParameters[0] != "00:00")//in all analysis, position 1 will be filled, if not, there's empty selection
+            {
+                switch (dataRangeParameters.Length)
+                {
+                    case 1:
+                       resultado = Application.Run("BERT.Call", functionName, dataRangeParameters[0]);
+                        break;
+                    case 2:
+                        resultado = Application.Run("BERT.Call", functionName, 
+                            dataRangeParameters[0], 
+                            dataRangeParameters[1]);
+                        break;
+                    case 3:
+                        resultado = Application.Run("BERT.Call", functionName,
+                            dataRangeParameters[0], 
+                            dataRangeParameters[1], 
+                            dataRangeParameters[2] );
+                        break;
+                    case 4:
+                        resultado = Application.Run("BERT.Call", functionName, dataRangeParameters[0],
+                            dataRangeParameters[1],
+                            dataRangeParameters[2],
+                            dataRangeParameters[3]);
+                        break;
+                    case 5:
+                        resultado = Application.Run("BERT.Call", functionName, 
+                            dataRangeParameters[0], 
+                            dataRangeParameters[1],
+                            dataRangeParameters[2], 
+                            dataRangeParameters[3], 
+                            dataRangeParameters[4]);
+                        break;
+                    default:
+                        break;
+                }
+
+                MessageBox.Show(resultado.ToString());
+            }
+            else
+            {
+                MessageBox.Show("There's no data selected");
+            }
+                
+            
+        }
+
         private Excel.Worksheet getCurrentActiveSheet()
         {
             Excel.Workbook currentWorkBook = this.Application.ActiveWorkbook;
             return currentWorkBook.ActiveSheet;
         }
+
         public void FillCellsFromDataBase(List<String> DataBaseQuery, String columnindex) {
                     
             Excel.Worksheet currentWorkBook = getCurrentActiveSheet();
@@ -51,7 +101,7 @@ namespace ExcelAddIn
             {
                 currentWorkBook.Range[columnindex + (i + 1)].Value2 = DataBaseQuery[i];
             }
-            
+            currentWorkBook.Columns.AutoFit();
             
         }
         

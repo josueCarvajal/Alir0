@@ -13,7 +13,8 @@ namespace ExcelAddIn.DataBase
     public partial class scfc : Form
     {
         DataBaseConection Conection = new DataBaseConection();
-
+        List<string> EmptyList = new List<string>();
+        List<string> AuxiliarList = new List<string>();
         public scfc()
         {
             InitializeComponent();
@@ -21,66 +22,110 @@ namespace ExcelAddIn.DataBase
            AddInstancesTocbInstances();
            
         }
-      
+
+        public void CleanColumnList() {
+              LbSelectedColumns.Items.Clear();
+        }
         private void AddInstancesTocbInstances()
         {
             this.Show();
-            cbInstances.DataSource = Conection.Installedinstances();
+<<<<<<< HEAD
+
+=======
+            cbInstances.DataSource = Conection.InstalledInstances();
+>>>>>>> 5ea27c6ea66697fedcde3c5a87fbe148ab697b3c
            
+                cbInstances.DataSource = Conection.Installedinstances();
+
+                if (cbInstances.Items.Count == 0)
+                {
+                    string[] instancias;
+                    instancias = Conection.InstalledInstances();
+
+                    foreach (string s in instancias)
+                    {
+
+                        cbInstances.Items.Add(@"(local)\" + s);
+
+                    }
+                }
+              
         }
+
        
         private void cbInstances_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-           string Instances = cbInstances.SelectedItem.ToString();
-           
+            CleanColumnList();
+            string Instances = cbInstances.SelectedItem.ToString();
 
-            LbSelectedColumns.Items.Clear();
-
-            CbDataBaseName.DataSource = Conection.InstalledDataBase(Instances);
+            CbDataBaseName.DataSource = EmptyList;
+            cbTableName.DataSource = EmptyList;
+            cbColumn.DataSource = EmptyList;
             
+            AuxiliarList= Conection.InstalledDatabases(Instances);
+            CbDataBaseName.DataSource = AuxiliarList;
+            if (CbDataBaseName.DataSource == null)
+            {
+                MessageBox.Show("There are no databases in the instance " + Instances);
+                return;
+            }
+
         }
 
         private void CbDataBaseName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CleanColumnList();
             string Instances = cbInstances.SelectedItem.ToString();
             string DataBase = CbDataBaseName.SelectedItem.ToString();
 
-            LbSelectedColumns.Items.Clear();
+            cbTableName.DataSource = EmptyList;
+            cbColumn.DataSource = EmptyList;
+
             cbTableName.DataSource = Conection.TablesInDataBase(Instances, DataBase);
+            if (cbTableName.DataSource==null)
+            {
+                MessageBox.Show("There are no tables in the database "+DataBase);
+                return;
+            }
            
         }
 
         private void cbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
-           string Instances = cbInstances.SelectedItem.ToString();
+            CleanColumnList();
+
+            string Instances = cbInstances.SelectedItem.ToString();
             string DataBase = CbDataBaseName.SelectedItem.ToString();
             string Table= cbTableName.SelectedItem.ToString();
 
-            LbSelectedColumns.Items.Clear();
+            cbColumn.DataSource = EmptyList;
             cbColumn.DataSource = Conection.GetColumnsOfTable(Instances, DataBase, Table);
-            
+            if (cbColumn.DataSource == null)
+            {
+                MessageBox.Show("There are no columns in the table " + Table);
+                return;
+            }
         }
 
         private void cbColumn_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* List<string> SQLquery = new List<string>();
-            string Instances = cbInstances.SelectedItem.ToString();
-            string DataBase = CbDataBaseName.SelectedItem.ToString();
-            string Table = cbTableName.SelectedItem.ToString();
-            string Column= cbColumn.SelectedItem.ToString();
-
-            SQLquery = Conection.SQLQueryToColumn(Instances, DataBase, Table, Column);
-            Globals.ThisAddIn.FillCellsFromDataBase(SQLquery);
-            */
+                     
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           string Column = cbColumn.SelectedItem.ToString();
-
-            if (ColumnDoesntExists(Column))
+            if (cbColumn.SelectedItem != null)
             {
-                LbSelectedColumns.Items.Add(Column);
+                string Column = cbColumn.SelectedItem.ToString();
+                if (ColumnDoesntExists(Column))
+                {
+                    LbSelectedColumns.Items.Add(Column);
+                }
+
+            }
+            else {
+                MessageBox.Show("column is empty");
             }
            
         }
@@ -111,19 +156,18 @@ namespace ExcelAddIn.DataBase
             else { MessageBox.Show("You must select an item from the list"); }
                    
         }
-
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-
-        }
-
+                
         private void btnOk_Click(object sender, EventArgs e)
         {
             if (LbSelectedColumns.Items.Count==0)
             {
-                MessageBox.Show("You must select a column");
+                MessageBox.Show("There is not columns added in the list");
                 return;
                
+            }
+            if (LbSelectedColumns.Items.Count <= 11) {
+                MessageBox.Show("The maximum number of items you can select is 10");
+                return;
             }
             string Instances = cbInstances.SelectedItem.ToString();
             string DataBase = CbDataBaseName.SelectedItem.ToString();
@@ -135,25 +179,27 @@ namespace ExcelAddIn.DataBase
             ColumnIndex.Add("B");
             ColumnIndex.Add("C");
             ColumnIndex.Add("D");
+            ColumnIndex.Add("E");
             ColumnIndex.Add("F");
             ColumnIndex.Add("G");
             ColumnIndex.Add("H");
             ColumnIndex.Add("I");
             ColumnIndex.Add("J");
-
-
+            
             for (int i = 0; i < LbSelectedColumns.Items.Count; i++)
             {
                 SQLquery = Conection.SQLQueryToColumn(Instances, DataBase, Table, LbSelectedColumns.Items[i].ToString());
                 Globals.ThisAddIn.FillCellsFromDataBase(SQLquery,ColumnIndex[i]);
             }
-           /* foreach (var item in LbSelectedColumns.Items)
-            {
-                
-                SQLquery = Conection.SQLQueryToColumn(Instances, DataBase, Table, item.ToString());
-                Globals.ThisAddIn.FillCellsFromDataBase(SQLquery);
-            }
-            */
+          
+
+        }
+<<<<<<< HEAD
+                                  
+=======
+
+        private void scfc_Load(object sender, EventArgs e)
+        {
 
         }
 
@@ -162,11 +208,12 @@ namespace ExcelAddIn.DataBase
 
 
 
-      //  ProgressBar bg = new ProgressBar();
+        //  ProgressBar bg = new ProgressBar();
 
-        
 
-       
+
+
+>>>>>>> 5ea27c6ea66697fedcde3c5a87fbe148ab697b3c
 
     }
 }

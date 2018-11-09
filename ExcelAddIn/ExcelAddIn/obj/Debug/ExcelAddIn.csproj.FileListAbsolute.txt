@@ -51,7 +51,6 @@ C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.vst
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csprojAssemblyReference.cache
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Properties.Resources.resources
-C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Ribbon1.resources
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.GenerateResource.cache
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CoreCompileInputs.cache
 C:\Users\josue\source\repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
@@ -74,3 +73,24 @@ C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\
 C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources
 C:\Users\josue\source\repos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.scfc.resources
 C:\Users\josue\source\repos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources
+<<<<<<< HEAD
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.pdb
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll.manifest
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.vsto
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csprojAssemblyReference.cache
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.scfc.resources
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Properties.Resources.resources
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Ribbon1.resources
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.GenerateResource.cache
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CoreCompileInputs.cache
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.dll
+C:\Users\KURISUTIAN\Documents\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb
+=======
+C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Class.AnalysisGUI.resources
+C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.MunuBar.resources
+C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Class.Analysis.Forms.VectorInputs.resources
+>>>>>>> 5ea27c6ea66697fedcde3c5a87fbe148ab697b3c
