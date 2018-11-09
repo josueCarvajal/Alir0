@@ -12,8 +12,8 @@ namespace ExcelAddIn.DataBase
 {
     class DataBaseConection
     {
+        
 
-        SqlConnection SqlConexion;
         public DataBaseConection()
         {
             
@@ -22,63 +22,84 @@ namespace ExcelAddIn.DataBase
         public List<String> Installedinstances()
         {
 
-            SqlDataSourceEnumerator servers;
-            DataTable serversTable;
-            List<String> serversList;
+            SqlDataSourceEnumerator servidores;
+            DataTable tablaservidores;
+            List<String> listaservidores;
 
-            servers = SqlDataSourceEnumerator.Instance;
-            serversTable = new DataTable();
-            
-            serversTable = servers.GetDataSources();
-            
-            serversList = new List<string>();
-            
-            foreach (DataRow rowServidor in serversTable.Rows)
+            servidores = SqlDataSourceEnumerator.Instance;
+            tablaservidores = new DataTable();
+
+            // Obtenemos un dataTable con la información sobre las instancias visibles
+            // de SQL Server 2000 y 2005
+            tablaservidores = servidores.GetDataSources();
+            // Creamos una lista para que sea el origen de datos del combobox
+            listaservidores = new List<string>();
+            // Recorremos el dataTable y añadimos un valor nuevo a la lista con cada fila
+            foreach (DataRow rowServidor in tablaservidores.Rows)
             {
-               
+                // La instancia de SQL Server puede tener nombre de instancia 
+                //o únicamente el nombre del servidor, comprobamos si hay 
+                //nombre de instancia para mostrarlo
                 if (String.IsNullOrEmpty(rowServidor["InstanceName"].ToString()))
-                    serversList.Add(rowServidor["ServerName"].ToString());
+                    listaservidores.Add(rowServidor["ServerName"].ToString());
                 else
-                    serversList.Add(rowServidor["ServerName"] + "\\" + rowServidor["InstanceName"]);
+                    listaservidores.Add(rowServidor["ServerName"] + "\\" + rowServidor["InstanceName"]);
             }
-            
-            return serversList;
+
+            // Asignamos al origen de datos del combobox la lista con 
+            // las instancias de servidores
+            // cbInstances.DataSource = listaservidores;
+
+            return listaservidores;
         }
 
         public string[] InstalledInstances()
         {
-            Microsoft.Win32.RegistryKey rk;//C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL
+            Microsoft.Win32.RegistryKey rk;
             rk = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server", false);
             string[] s;
             s = ((string[])rk.GetValue("InstalledInstances"));
             return s;
         }
 
-        public List<String> InstalledDatabases(string instances) {
-
-            List<String> bases = new List<string>();
+        public String[] InstalledDataBase(string instances)
+        {
+            // Las bases de datos propias de SQL Server
             string[] basesSys = { "master", "model", "msdb", "tempdb" };
+            string[] bases;
             DataTable dt = new DataTable();
-            string dataBase = "master";
+            // Usamos la seguridad integrada de Windows
+            string sCnn = "Server=" + instances + "; database=master; integrated security=yes";
+
+            // La orden T-SQL para recuperar las bases de master
             string sel = "SELECT name FROM sysdatabases";
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter(sel, OpenConection(instances, dataBase));
+                SqlDataAdapter da = new SqlDataAdapter(sel, sCnn);
                 da.Fill(dt);
-                CloseConection(SqlConexion);
-                foreach (DataRow row in dt.Rows)
+                bases = new string[dt.Rows.Count - 1];
+                int k = -1;
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                   
-                    foreach (DataColumn Columns in dt.Columns)
+                    string s = dt.Rows[i]["name"].ToString();
+                    // Solo asignar las bases que no son del sistema
+                    if (Array.IndexOf(basesSys, s) == -1)
                     {
-                        
-                            if (Array.IndexOf(basesSys, row[Columns].ToString()) ==-1)
-                            {
-                                bases.Add(row[Columns].ToString());
-                            }
-                                             
+                        k += 1;
+                        bases[k] = s;
                     }
                 }
+                if (k == -1) return null;
+                // ReDim Preserve
+                {
+                    int i1_RPbases = bases.Length;
+                    string[] copyOf_dataBases = new string[i1_RPbases];
+                    Array.Copy(bases, copyOf_dataBases, i1_RPbases);
+                    bases = new string[(k + 1)];
+                    Array.Copy(copyOf_dataBases, bases, (k + 1));
+                };
+                return bases;
+
             }
             catch (Exception ex)
             {
@@ -86,9 +107,9 @@ namespace ExcelAddIn.DataBase
                     "Error al recuperar las bases de la instancia indicada",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return bases;
+            return null;
         }
-                 
+ 
         public List<String> TablesInDataBase(string instances, string dataBase)
         {
             List<string> result = new List<string>();
@@ -96,40 +117,26 @@ namespace ExcelAddIn.DataBase
             System.Data.SqlClient.SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
                 result.Add(reader["name"].ToString());
-            CloseConection(SqlConexion);
             return result;
         }
         public SqlConnection OpenConection(string instances, string dataBase)
-
         {
-            var connStrBldr = new System.Data.SqlClient.SqlConnectionStringBuilder();
-            connStrBldr.DataSource = instances;
-            connStrBldr.InitialCatalog = dataBase;
-            connStrBldr.IntegratedSecurity = true;
-
-            SqlConexion = new SqlConnection(connStrBldr.ToString());
-            SqlConexion.Open();
-            return SqlConexion;
+            SqlConnection conexion = new SqlConnection("Data Source=" + instances + "; Initial Catalog=" + dataBase + "; Integrated Security = True");
+            conexion.Open();
+            return conexion;
         }
-
-        public void CloseConection(SqlConnection conection)
-        {
-            conection.Close();
-
-        }
-
+        
         public List<string> GetColumnsOfTable(string instances, string dataBase, string tableName)
         {
             List<string> colList = new List<string>();
             DataTable dataTable = new DataTable();
 
-            //string cmdString = String.Format("SELECT TOP 0 * FROM {0}", tableName);
-            string cmdString = "SELECT TOP 0 * FROM " + tableName;
+            string cmdString = String.Format("SELECT TOP 0 * FROM {0}", tableName);
 
             using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
             {
                 dataContent.Fill(dataTable);
-                CloseConection(SqlConexion);
+
                 foreach (DataColumn col in dataTable.Columns)
                 {
                     colList.Add(col.ColumnName);
@@ -147,7 +154,7 @@ namespace ExcelAddIn.DataBase
             using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
             {
                 dataContent.Fill(dataTable);
-                CloseConection(SqlConexion);
+
                 foreach (DataRow row in dataTable.Rows)
                 {
                     foreach (var item in row.ItemArray)

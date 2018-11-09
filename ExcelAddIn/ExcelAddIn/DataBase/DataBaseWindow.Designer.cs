@@ -41,8 +41,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
             this.LbSelectedColumns = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // CbDataBaseName
@@ -154,7 +161,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbColumn);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(29, 12);
+            this.panel1.Location = new System.Drawing.Point(30, 97);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 278);
             this.panel1.TabIndex = 11;
@@ -177,9 +184,63 @@
             this.LbSelectedColumns.Size = new System.Drawing.Size(160, 186);
             this.LbSelectedColumns.TabIndex = 11;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(160, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(190, 31);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(160, 20);
+            this.textBox2.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "User";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(197, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Password";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnConnect);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(30, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(380, 90);
+            this.panel2.TabIndex = 15;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(284, 57);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(66, 21);
+            this.btnConnect.TabIndex = 15;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(314, 311);
+            this.btnOk.Location = new System.Drawing.Point(314, 398);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(95, 23);
             this.btnOk.TabIndex = 16;
@@ -191,17 +252,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(437, 351);
+            this.ClientSize = new System.Drawing.Size(439, 433);
             this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "scfc";
             this.Text = "DataBaseWindow";
-            this.Load += new System.EventHandler(this.scfc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -219,7 +279,13 @@
         private System.Windows.Forms.ComboBox cbInstances;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox LbSelectedColumns;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnOk;
     }
