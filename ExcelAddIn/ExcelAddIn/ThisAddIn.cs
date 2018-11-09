@@ -27,7 +27,7 @@ namespace ExcelAddIn
 
         public void BertCall(string functionName, String dataRange)
         {
-            if(dataRange.Equals("00:00"))
+            if (dataRange.Equals("00:00"))
             {
                 MessageBox.Show("Please check your empty cells");
             }
@@ -46,32 +46,33 @@ namespace ExcelAddIn
                 switch (dataRangeParameters.Length)
                 {
                     case 1:
-                       resultado = Application.Run("BERT.Call", functionName, dataRangeParameters[0]);
+                        resultado = Application.Run("BERT.Call", functionName, getCurrentActiveSheet().Range[dataRangeParameters[0]]);
                         break;
                     case 2:
-                        resultado = Application.Run("BERT.Call", functionName, 
-                            dataRangeParameters[0], 
-                            dataRangeParameters[1]);
+                        resultado = Application.Run("BERT.Call", functionName,
+                           getCurrentActiveSheet().Range[dataRangeParameters[0]],
+                           getCurrentActiveSheet().Range[dataRangeParameters[1]]);
                         break;
                     case 3:
                         resultado = Application.Run("BERT.Call", functionName,
-                            dataRangeParameters[0], 
-                            dataRangeParameters[1], 
-                            dataRangeParameters[2] );
+                           getCurrentActiveSheet().Range[dataRangeParameters[0]],
+                           getCurrentActiveSheet().Range[dataRangeParameters[1]],
+                        getCurrentActiveSheet().Range[dataRangeParameters[2]]);
                         break;
                     case 4:
                         resultado = Application.Run("BERT.Call", functionName, dataRangeParameters[0],
-                            dataRangeParameters[1],
-                            dataRangeParameters[2],
-                            dataRangeParameters[3]);
+                           getCurrentActiveSheet().Range[dataRangeParameters[0]],
+                           getCurrentActiveSheet().Range[dataRangeParameters[1]],
+                        getCurrentActiveSheet().Range[dataRangeParameters[2]],
+                        getCurrentActiveSheet().Range[dataRangeParameters[3]]);
                         break;
                     case 5:
-                        resultado = Application.Run("BERT.Call", functionName, 
-                            dataRangeParameters[0], 
-                            dataRangeParameters[1],
-                            dataRangeParameters[2], 
-                            dataRangeParameters[3], 
-                            dataRangeParameters[4]);
+                        resultado = Application.Run("BERT.Call", functionName,
+                           getCurrentActiveSheet().Range[dataRangeParameters[0]],
+                           getCurrentActiveSheet().Range[dataRangeParameters[1]],
+                          getCurrentActiveSheet().Range[dataRangeParameters[2]],
+                          getCurrentActiveSheet().Range[dataRangeParameters[3]],
+                          getCurrentActiveSheet().Range[dataRangeParameters[4]]);
                         break;
                     default:
                         break;
@@ -83,8 +84,8 @@ namespace ExcelAddIn
             {
                 MessageBox.Show("There's no data selected");
             }
-                
-            
+
+
         }
 
         private Excel.Worksheet getCurrentActiveSheet()
@@ -92,17 +93,18 @@ namespace ExcelAddIn
             Excel.Workbook currentWorkBook = this.Application.ActiveWorkbook;
             return currentWorkBook.ActiveSheet;
         }
-        public void FillCellsFromDataBase(List<String> DataBaseQuery, String columnindex) {
-                    
+        public void FillCellsFromDataBase(List<String> DataBaseQuery, String columnindex)
+        {
+
             Excel.Worksheet currentWorkBook = getCurrentActiveSheet();
-            
+
             for (int i = 0; i < DataBaseQuery.Count; i++)
             {
                 currentWorkBook.Range[columnindex + (i + 1)].Value2 = DataBaseQuery[i];
             }
-            
-            
+
+
         }
-        
+
     }
 }

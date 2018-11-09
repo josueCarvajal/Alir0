@@ -90,11 +90,7 @@ namespace ExcelAddIn.Class.Analysis.Forms
             {
                 Class.BertCalls call = new BertCalls();
                 string[] range = getRangeSelected(getNumberOfVisibleFields());
-                call.bertCalls("SeriesTiempo_Histograma", range);
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Blank cells were found. \nIf you want to ignore them, mark the check box above", "Warning", MessageBoxButtons.OK);
+                call.bertCalls("SeriesTiempo_Histograma", range);// 1
             }
         }
 
