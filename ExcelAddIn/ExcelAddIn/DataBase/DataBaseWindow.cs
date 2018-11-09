@@ -25,7 +25,7 @@ namespace ExcelAddIn.DataBase
         private void AddInstancesTocbInstances()
         {
             this.Show();
-            cbInstances.DataSource = Conection.InstalledInstances();
+            cbInstances.DataSource = Conection.Installedinstances();
            
         }
        
@@ -157,21 +157,16 @@ namespace ExcelAddIn.DataBase
 
         }
 
-        private void scfc_Load(object sender, EventArgs e)
-        {
-
-        }
 
 
 
 
 
+      //  ProgressBar bg = new ProgressBar();
 
-        //  ProgressBar bg = new ProgressBar();
+        
 
-
-
-
+       
 
     }
 }

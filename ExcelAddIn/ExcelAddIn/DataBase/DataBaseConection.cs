@@ -55,7 +55,7 @@ namespace ExcelAddIn.DataBase
 
         public string[] InstalledInstances()
         {
-            Microsoft.Win32.RegistryKey rk;//C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL
+            Microsoft.Win32.RegistryKey rk;
             rk = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server", false);
             string[] s;
             s = ((string[])rk.GetValue("InstalledInstances"));
