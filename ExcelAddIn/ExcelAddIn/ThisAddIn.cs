@@ -38,6 +38,10 @@ namespace ExcelAddIn
             }
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 0da4de545bbd41e248044146c0f84276f8c6db49
         public void BertCallTEST(string functionName, string[] dataRangeParameters)
         {
             object resultado = 0; ;
@@ -88,6 +92,11 @@ namespace ExcelAddIn
 
         }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 8aa129822e407c536987bfee443c26e1fe832913
+>>>>>>> 0da4de545bbd41e248044146c0f84276f8c6db49
         private Excel.Worksheet getCurrentActiveSheet()
         {
             Excel.Workbook currentWorkBook = this.Application.ActiveWorkbook;
