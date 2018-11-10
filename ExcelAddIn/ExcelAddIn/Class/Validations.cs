@@ -15,6 +15,7 @@ namespace ExcelAddIn.Class
         public string getRange()
         {
             Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
+            
           return selectedRange.Address.ToString(); 
         }
 
