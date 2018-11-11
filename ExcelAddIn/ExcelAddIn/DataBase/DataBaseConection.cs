@@ -12,8 +12,8 @@ namespace ExcelAddIn.DataBase
 {
     class DataBaseConection
     {
-        
 
+        SqlConnection SqlConexion;
         public DataBaseConection()
         {
             
@@ -62,6 +62,42 @@ namespace ExcelAddIn.DataBase
             return s;
         }
 
+        public List<String> InstalledDatabases(string instances)
+        {
+
+            List<String> bases = new List<string>();
+            string[] basesSys = { "master", "model", "msdb", "tempdb" };
+            DataTable dt = new DataTable();
+            string dataBase = "master";
+            string sel = "SELECT name FROM sysdatabases";
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sel, OpenConection(instances, dataBase));
+                da.Fill(dt);
+                CloseConection(SqlConexion);
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    foreach (DataColumn Columns in dt.Columns)
+                    {
+
+                        if (Array.IndexOf(basesSys, row[Columns].ToString()) == -1)
+                        {
+                            bases.Add(row[Columns].ToString());
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,
+                    "Error al recuperar las bases de la instancia indicada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return bases;
+        }
+
         public String[] InstalledDataBase(string instances)
         {
             // Las bases de datos propias de SQL Server
@@ -77,6 +113,7 @@ namespace ExcelAddIn.DataBase
             {
                 SqlDataAdapter da = new SqlDataAdapter(sel, sCnn);
                 da.Fill(dt);
+                CloseConection(SqlConexion);
                 bases = new string[dt.Rows.Count - 1];
                 int k = -1;
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -117,13 +154,19 @@ namespace ExcelAddIn.DataBase
             System.Data.SqlClient.SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
                 result.Add(reader["name"].ToString());
+            CloseConection(SqlConexion);
             return result;
         }
         public SqlConnection OpenConection(string instances, string dataBase)
         {
-            SqlConnection conexion = new SqlConnection("Data Source=" + instances + "; Initial Catalog=" + dataBase + "; Integrated Security = True");
-            conexion.Open();
-            return conexion;
+            var connStrBldr = new System.Data.SqlClient.SqlConnectionStringBuilder();
+            connStrBldr.DataSource = instances;
+            connStrBldr.InitialCatalog = dataBase;
+            connStrBldr.IntegratedSecurity = true;
+
+            SqlConexion = new SqlConnection(connStrBldr.ToString());
+            SqlConexion.Open();
+            return SqlConexion;
         }
         
         public List<string> GetColumnsOfTable(string instances, string dataBase, string tableName)
@@ -131,12 +174,13 @@ namespace ExcelAddIn.DataBase
             List<string> colList = new List<string>();
             DataTable dataTable = new DataTable();
 
-            string cmdString = String.Format("SELECT TOP 0 * FROM {0}", tableName);
+            //string cmdString = String.Format("SELECT TOP 0 * FROM {0}", tableName);
+            string cmdString = "SELECT TOP 0 * FROM " + tableName;
 
             using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
             {
                 dataContent.Fill(dataTable);
-
+                CloseConection(SqlConexion);
                 foreach (DataColumn col in dataTable.Columns)
                 {
                     colList.Add(col.ColumnName);
@@ -144,6 +188,15 @@ namespace ExcelAddIn.DataBase
             }
             return colList;
         }
+
+        public void CloseConection(SqlConnection conection)
+        {
+            conection.Close();
+
+        }
+
+
+
         public List<string> SQLQueryToColumn(string instances, string dataBase, string tableName,string column)
         {
             List<string> SQLquery = new List<string>();
@@ -154,7 +207,7 @@ namespace ExcelAddIn.DataBase
             using (SqlDataAdapter dataContent = new SqlDataAdapter(cmdString, OpenConection(instances, dataBase)))
             {
                 dataContent.Fill(dataTable);
-
+                CloseConection(SqlConexion);
                 foreach (DataRow row in dataTable.Rows)
                 {
                     foreach (var item in row.ItemArray)
