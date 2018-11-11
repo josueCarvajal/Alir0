@@ -112,6 +112,7 @@ namespace ExcelAddIn
                 currentWorkBook.Range[columnindex + (i + 1)].Value2 = DataBaseQuery[i];
             }
 
+            currentWorkBook.Columns.AutoFit();
 
         }
 

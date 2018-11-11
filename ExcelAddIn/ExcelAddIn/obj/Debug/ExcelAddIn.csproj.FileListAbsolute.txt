@@ -93,3 +93,22 @@ C:\Users\KURISUTIAN\Documents\GitHub\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.
 C:\Users\KURISUTIAN\Documents\GitHub\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
 C:\Users\KURISUTIAN\Documents\GitHub\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.dll
 C:\Users\KURISUTIAN\Documents\GitHub\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb
+=======
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.pdb
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.dll.manifest
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\bin\Debug\ExcelAddIn.vsto
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csprojAssemblyReference.cache
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Class.AnalysisGUI.resources
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Class.Analysis.Forms.VectorInputs.resources
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.scfc.resources
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Properties.Resources.resources
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.MunuBar.resources
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.GenerateResource.cache
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CoreCompileInputs.cache
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.dll
+C:\Users\KURISUTIAN\Documents\Practica\repos\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.pdb
+>>>>>>> old_database
