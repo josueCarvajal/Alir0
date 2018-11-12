@@ -30,21 +30,31 @@ namespace ExcelAddIn.Class.Analysis.TimeSeries
         {
             return new string[,]
             {
-               {  "Autocorrelogram","1"},
-               {  "Histogram","1"}
+               {  "Autocorrelogram","4"},
+               {  "Histogram","4"}
             };
         }
         public string[,] getNameOfVectors()//returns the name of vectors needed for each analysis
         {
             return new string[,]
             {
-               {  "Autocorrelogram","Vector A"},
-               {  "Histogram","Vector A"}
+               {  "Autocorrelogram","Xt"},
+               {  "Autocorrelogram","Periodicity"},
+               {  "Autocorrelogram","P"},
+               {  "Autocorrelogram","Q"},
+               {  "Histogram","Xt"},
+               {  "Histogram","Periodicity"},
+               {  "Histogram","P"},
+               {  "Histogram","Q"}
             };
         }
         public string[,] getFunctionName()
         {
-            return null;
+            return new string[,]
+            {
+               {  "Autocorrelogram","SeriesTiempo_GARCH"},
+               {  "Histogram","SeriesTiempo_GARCH"}
+            };
         }
     }
 }

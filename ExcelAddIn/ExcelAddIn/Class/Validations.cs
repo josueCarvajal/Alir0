@@ -26,7 +26,7 @@ namespace ExcelAddIn.Class
 
         public int getNumberOfVectors(string nameOfAnalysis, String[,] vectors)
         {
-            for(int i=0; i<10;i++)
+            for(int i=0; i < vectors.GetLength(0); i++)
             {
                 string analysisName = vectors[i,0];
                 if (analysisName.Equals(nameOfAnalysis))
@@ -39,7 +39,7 @@ namespace ExcelAddIn.Class
         }
         public string getFunctionName(string nameOfAnalysis,string[,] vectors)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < vectors.GetLength(0); i++)
             {
                 string analysisName = vectors[i, 0];
                 if (analysisName.Equals(nameOfAnalysis))
@@ -56,7 +56,7 @@ namespace ExcelAddIn.Class
         public string[] getNameOfVectors(string nameOfAnalysis, String[,] vectors)
         {
             List<string> vectorNames = new List<string>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < vectors.GetLength(0); i++)
             {
                 string analysisName = vectors[i, 0];
                 if (analysisName.Equals(nameOfAnalysis))

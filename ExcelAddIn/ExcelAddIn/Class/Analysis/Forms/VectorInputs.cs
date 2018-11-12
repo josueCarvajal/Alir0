@@ -205,10 +205,10 @@ namespace ExcelAddIn.Class.Analysis.Forms
                 case 1:
                     this.lblVector1.Visible = true;
                     this.txtVector1.Visible = true;
+                    this.lblVector1.Text = nameOfTheVectors[0];
 
                     this.lblVector2.Visible = false;
                     this.txtVector2.Visible = false;
-
 
                     this.lblVector3.Visible = false;
                     this.txtVector3.Visible = false;
@@ -221,8 +221,6 @@ namespace ExcelAddIn.Class.Analysis.Forms
 
                     this.lblVector6.Visible = false;
                     this.txtVector6.Visible = false;
-
-                    this.lblVector1.Text = nameOfTheVectors[0];
                     break;
                 case 2:
                     this.lblVector1.Visible = true;
@@ -259,7 +257,6 @@ namespace ExcelAddIn.Class.Analysis.Forms
                     this.lblVector3.Visible = true;
                     this.txtVector3.Visible = true;
                     this.lblVector3.Text = nameOfTheVectors[2];
-
 
                     this.lblVector4.Visible = false;
                     this.txtVector4.Visible = false;
