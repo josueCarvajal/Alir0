@@ -15,6 +15,7 @@ namespace ExcelAddIn.Class
         public string getRange()
         {
             Excel.Range selectedRange = Globals.ThisAddIn.Application.Selection;
+            
           return selectedRange.Address.ToString(); 
         }
 
@@ -25,7 +26,7 @@ namespace ExcelAddIn.Class
 
         public int getNumberOfVectors(string nameOfAnalysis, String[,] vectors)
         {
-            for(int i=0; i<10;i++)
+            for(int i=0; i < vectors.GetLength(0); i++)
             {
                 string analysisName = vectors[i,0];
                 if (analysisName.Equals(nameOfAnalysis))
@@ -38,7 +39,7 @@ namespace ExcelAddIn.Class
         }
         public string getFunctionName(string nameOfAnalysis,string[,] vectors)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < vectors.GetLength(0); i++)
             {
                 string analysisName = vectors[i, 0];
                 if (analysisName.Equals(nameOfAnalysis))
@@ -52,18 +53,28 @@ namespace ExcelAddIn.Class
 
 
         //not programed yet
-        public string getNameOfVectors(string nameOfAnalysis, String[,] vectors)
+        public string[] getNameOfVectors(string nameOfAnalysis, String[,] vectors)
         {
-            for (int i = 0; i < 10; i++)
+            List<string> vectorNames = new List<string>();
+            for (int i = 0; i < vectors.GetLength(0); i++)
             {
                 string analysisName = vectors[i, 0];
                 if (analysisName.Equals(nameOfAnalysis))
                 {
-                    int number = Convert.ToInt16(vectors[i, 1]);
-                    return "";
+                    string vectorName = vectors[i, 1];
+                    vectorNames.Add(vectorName);
                 }
             }
-            return "";
+            int numberOfNames = Convert.ToInt32(vectorNames.Count);
+            string[] names = new string[numberOfNames];
+            int j = 0;
+            foreach (string name in vectorNames)
+            {
+                names[j] = name.ToString();
+                j++;
+            }
+
+            return names;
         }
 
 

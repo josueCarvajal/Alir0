@@ -25,31 +25,42 @@ namespace ExcelAddIn.Class.Analysis.TimeSeries
         {
             return new string[] {
                 "No trend level or seasonal components",
-                "With trend level",
-                "With trend level and seasonal components."
+                "No trend level",
+                "Exponential Smoothing"
             };
         }
         public string[,] getNumberOfVectors()//returns the number vectors needed for each analysis
         {
             return new string[,]
             {
-               {  "No trend level or seasonal components","1"},
-               {  "With trend level","1"},
-               {"With trend level and seasonal components.","1"}
+               {"No trend level or seasonal components","3"},
+               {"No trend level","3"},
+               {"Exponential Smoothing","3"}
             };
         }
         public string[,] getNameOfVectors()//returns the name of vectors needed for each analysis
         {
             return new string[,]
             {
-               {"No trend level or seasonal components","Vector A"},
-               {"With trend level","Vector B"},
-               {"With trend level and seasonal components.","B"}
+               {"No trend level or seasonal components","Xt"},
+               {"No trend level or seasonal components","Periodicity"},
+               {"No trend level or seasonal components","Projection"},
+               {"No trend level","Xt"},
+               {"No trend level","Periodicity"},
+               {"No trend level","Projection"},
+               {"Exponential Smoothing","Xt"},
+               {"Exponential Smoothing","Periodicity"},
+               {"Exponential Smoothing","Projection"},
             };
         }
         public string[,] getFunctionName()
         {
-            return null;
+            return new string[,]
+            {
+               {"No trend level or seasonal components","HoltWinters_SinNivel_SinTendencia_SinComponenteEstacional"},
+               {"No trend level","HoltWinters_SinNivel_SinTendencia"},
+               {"Exponential Smoothing","HoltWinters_SinNivel_SuavizamientoExponencial"}
+            };
         }
     }
 }

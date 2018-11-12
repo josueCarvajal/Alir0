@@ -46,7 +46,8 @@ namespace ExcelAddIn.Class
             Class.Validations validations = new Validations();
             int numberOfInputs = validations.getNumberOfVectors(getSelectedAnalysis(), this.numberOfVectors);
             string nameOfTheFunction = validations.getFunctionName(getSelectedAnalysis(), this.nameOfFunctions);
-            Class.Analysis.Forms.VectorInputs vectorInputForm = new Analysis.Forms.VectorInputs(numberOfInputs, nameOfTheFunction);
+            string[] inputNames = validations.getNameOfVectors(getSelectedAnalysis(), this.nameOfVectors);
+            Class.Analysis.Forms.VectorInputs vectorInputForm = new Analysis.Forms.VectorInputs(numberOfInputs, nameOfTheFunction,inputNames);
             vectorInputForm.Show();
         }
         private string getSelectedAnalysis()

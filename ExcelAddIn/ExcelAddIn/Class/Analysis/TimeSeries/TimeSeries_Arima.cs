@@ -24,29 +24,47 @@ namespace ExcelAddIn.Class.Analysis.TimeSeries
         public string[] getAnalysis()
         {
             return new string[] {
+                "With seasonal components",
                 "No seasonal components",
-                "With seasonal components"
+                "Arima proy - With seasonal components",
+                "Arima proy -  No seasonal components"
             };
         }
         public string[,] getNumberOfVectors()//returns the number vectors needed for each analysis
         {
             return new string[,]
             {
-               {  "No seasonal components","1"},
-               {  "With seasonal components","1"}
+               {"With seasonal components","2"},
+               { "No seasonal components","2"},
+               { "Arima proy - With seasonal components","3"},
+               { "Arima proy -  No seasonal components","3"}
             };
         }
         public string[,] getNameOfVectors()//returns the name of vectors needed for each analysis
         {
             return new string[,]
             {
-               {  "No seasonal components","Vector A"},
-               {  "With seasonal components","Vector B"}
+               {"With seasonal components","Xt"},
+               {"With seasonal components","Periodicity"},
+               {"No seasonal components","Xt"},
+               {"No seasonal components","Periodicity"},
+               {"Arima proy - With seasonal components","Xt"},
+               {"Arima proy - With seasonal components","Periodicity"},
+               {"Arima proy - With seasonal components","Projection"},
+               {"Arima proy -  No seasonal components","Xt"},
+               {"Arima proy -  No seasonal components","Periodicity"},
+               {"Arima proy -  No seasonal components","Projection"}
             };
         }
         public string[,] getFunctionName()
         {
-            return null;
+            return new string[,]
+            {
+               {"With seasonal components","Arima_ConComponenteEstacional"},
+               { "No seasonal components","Arima_SinComponenteEstacional"},
+               { "Arima proy - With seasonal components","ArimaProy_ConComponenteEstacional"},
+               { "Arima proy -  No seasonal components","ArimaProy_SinComponenteEstacional"}
+            };
         }
     }
 }

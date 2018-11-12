@@ -39,40 +39,42 @@ namespace ExcelAddIn.Class.Analysis.TimeSeries
         {
             return new string[,]
             {
-               { "Linear trend of the series","1"},
-               { "Decomposition","1"},
-               { "RandomEffect","1"},
-               { "Trend effect","1"},
-               { "Seasonal effect","1"},
-               { "Autocorrelogram","1"},
-               { "Partial autocorrelogram","1"},
-               { "Cyclic boxplot","1"},
+               { "Linear trend of the series","2"},
+               { "Decomposition","2"},
+               { "Random effect","2"},
+               { "Trend effect","2"},
+               { "Seasonal effect","2"},
+               { "Autocorrelogram","2"},
+               { "Partial autocorrelogram","2"},
+               { "Cyclic boxplot","2"},
                { "Histogram","2"},
-               { "Dickey-Fuller & Box Ljung Test","1"}
+               { "Dickey-Fuller & Box Ljung Test","2"}
             };
         }
         public string[,] getNameOfVectors()//returns the name of vectors needed for each analysis
         {
             return new string[,]
             {
-               { "Linear trend of the series","Xt"},
-               { "Linear trend of the series","Periodicity"},
-               { "Decomposition","Xt"},
-               { "Decomposition","Periodicity"},
-               { "Random Effect","Xt"},
-               { "Random Effect","Periodicity"},
-               { "Trend effect","Xt"},
-               { "Seasonal effect","Periodicity"},
-               { "Autocorrelogram","Xt"},
-               { "Autocorrelogram","Periodicity"},
-               { "Partial autocorrelogram","Xt"},
-               { "Partial autocorrelogram","Periodicity"},
-               { "Cyclic boxplot","Xt"},
-               { "Cyclic boxplot","Periodicity"},
-               { "Histogram","Xt"},
-               { "Histogram","Periodicity"},
-               { "Dickey-Fuller & Box Ljung Test","Xt"},
-               { "Dickey-Fuller & Box Ljung Test","Periodicity"},
+               {"Linear trend of the series","Xt"},
+               {"Linear trend of the series","Periodicity"},
+               {"Decomposition","Xt"},
+               {"Decomposition","Periodicity"},
+               {"Random effect","Xt"},
+               {"Random effect","Periodicity"},
+               {"Trend effect","Xt"},
+               {"Trend effect","Periodicity"},
+               {"Seasonal effect","Xt"},
+               {"Seasonal effect","Periodicity"},
+               {"Autocorrelogram","Xt"},
+               {"Autocorrelogram","Periodicity"},
+               {"Partial autocorrelogram","Xt"},
+               {"Partial autocorrelogram","Periodicity"},
+               {"Cyclic boxplot","Xt"},
+               {"Cyclic boxplot","Periodicity"},
+               {"Histogram","Xt"},
+               {"Histogram","Periodicity"},
+               {"Dickey-Fuller & Box Ljung Test","Xt"},
+               {"Dickey-Fuller & Box Ljung Test","Periodicity"},
             };
         }
 
@@ -80,13 +82,13 @@ namespace ExcelAddIn.Class.Analysis.TimeSeries
         {
             return new string[,]
             {
-               { "Linear trend of the series","SeriesTiempo_SerieEnAnalisis"},
-               { "Decomposition","SeriesTiempo_DescomposicionDeLaSerie"},
-               { "RandomEffect","SeriesTiempo_EfectoAleatorio"},
-               { "Trend effect","SeriesTiempo_EfectoTendecial"},
-               { "Seasonal effect","SeriesTiempo_EfectoEstacional"},
-               { "Autocorrelogram","SeriesTiempo_Autocorrelograma"},
-               { "Partial autocorrelogram","SeriesTiempo_AutocorrelogramaParcial"},
+               {"Linear trend of the series","SeriesTiempo_SerieEnAnalisis"},
+               {"Decomposition","SeriesTiempo_DescomposicionDeLaSerie"},
+               {"Random effect","SeriesTiempo_EfectoAleatorio"},
+               {"Trend effect","SeriesTiempo_EfectoTendecial"},
+               {"Seasonal effect","SeriesTiempo_EfectoEstacional"},
+               {"Autocorrelogram","SeriesTiempo_Autocorrelograma"},
+               {"Partial autocorrelogram","SeriesTiempo_AutocorrelogramaParcial"},
                { "Cyclic boxplot","SeriesTiempo_Boxplot"},
                { "Histogram","SeriesTiempo_Histograma"},
                { "Dickey-Fuller & Box Ljung Test","ts_DICKEY_FULLERYBOX_LJUNG"}
