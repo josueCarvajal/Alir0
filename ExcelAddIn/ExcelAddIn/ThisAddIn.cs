@@ -40,52 +40,46 @@ namespace ExcelAddIn
 
         public void BertCallTEST(string functionName, string[] dataRangeParameters)
         {
-            object resultado = 0; ;
+            object resultado = 0;
+
             if (dataRangeParameters[0] != "00:00")//in all analysis, position 1 will be filled, if not, there's empty selection
             {
+
                 switch (dataRangeParameters.Length)
                 {
                     case 1:
-                        System.Array myvalues = (System.Array)getCurrentActiveSheet().Range[dataRangeParameters[0]].Cells.Value;
-                        // resultado = Application.Run("BERT.Call", functionName, getCurrentActiveSheet().Range[dataRangeParameters[0]].Value2);
+                        Excel.Range v1 = Application.Range[dataRangeParameters[0]];
+                        resultado = Application.Run("BERT.Call", functionName,v1);
                         break;
                     case 2:
-                        //Excel.Range r = Application.Range[dataRangeParameters[0]];
-                        //Application.Evaluate("R.SeriesTiempo_Histograma(A1:A167;4)");
-                        //object[,] xt = getCurrentActiveSheet().Range[dataRangeParameters[0]].Cells.Value;
-                        //Excel.Range r = Application.Range[dataRangeParameters[0]];
-                        //resultado = Application.Run("BERT.Call", functionName,
-                        //selectedRange, 4);
+                       Excel.Range ve1 = Application.Range[dataRangeParameters[0]];
+                       Excel.Range ve2 = Application.Range[dataRangeParameters[1]];
+                       resultado = Application.Run("BERT.Call", functionName,ve1, ve2);
                         break;
                     case 3:
-                        resultado = Application.Run("BERT.Call", functionName,
-                            getCurrentActiveSheet().Range[dataRangeParameters[0]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[1]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[2]]
-                           );
-                        
+                        Excel.Range vec1 = Application.Range[dataRangeParameters[0]];
+                        Excel.Range vec2 = Application.Range[dataRangeParameters[1]];
+                        Excel.Range vec3 = Application.Range[dataRangeParameters[2]];
+                        resultado = Application.Run("BERT.Call", functionName,vec1,vec2,vec3);
                         break;
                     case 4:
-                        resultado = Application.Run("BERT.Call", functionName,
-                            getCurrentActiveSheet().Range[dataRangeParameters[0]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[1]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[2]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[3]]);
+                        Excel.Range vect1 = Application.Range[dataRangeParameters[0]];
+                        Excel.Range vect2 = Application.Range[dataRangeParameters[1]];
+                        Excel.Range vect3 = Application.Range[dataRangeParameters[2]];
+                        Excel.Range vect4 = Application.Range[dataRangeParameters[3]];
+                        resultado = Application.Run("BERT.Call", functionName,vect1,vect2,vect3,vect4);
                         break;
                     case 5:
-                        resultado = Application.Run("BERT.Call", functionName,
-                            getCurrentActiveSheet().Range[dataRangeParameters[0]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[1]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[2]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[3]],
-                           getCurrentActiveSheet().Range[dataRangeParameters[4]]
-                           );
+                        Excel.Range vector1 = Application.Range[dataRangeParameters[0]];
+                        Excel.Range vector2 = Application.Range[dataRangeParameters[1]];
+                        Excel.Range vector3 = Application.Range[dataRangeParameters[2]];
+                        Excel.Range vector4 = Application.Range[dataRangeParameters[3]];
+                        Excel.Range vector5 = Application.Range[dataRangeParameters[4]];
+                        resultado = Application.Run("BERT.Call", functionName, vector1, vector2, vector3, vector4, vector5);
                         break;
                     default:
                         break;
                 }
-
-                MessageBox.Show(resultado.ToString());
             }
             else
             {

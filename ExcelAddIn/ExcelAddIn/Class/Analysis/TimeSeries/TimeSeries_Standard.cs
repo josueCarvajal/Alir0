@@ -39,16 +39,16 @@ namespace ExcelAddIn.Class.Analysis.TimeSeries
         {
             return new string[,]
             {
-               { "Linear trend of the series","1"},
-               { "Decomposition","1"},
-               { "RandomEffect","1"},
-               { "Trend effect","1"},
-               { "Seasonal effect","1"},
-               { "Autocorrelogram","1"},
-               { "Partial autocorrelogram","1"},
-               { "Cyclic boxplot","1"},
+               { "Linear trend of the series","2"},
+               { "Decomposition","2"},
+               { "RandomEffect","2"},
+               { "Trend effect","2"},
+               { "Seasonal effect","2"},
+               { "Autocorrelogram","2"},
+               { "Partial autocorrelogram","2"},
+               { "Cyclic boxplot","2"},
                { "Histogram","2"},
-               { "Dickey-Fuller & Box Ljung Test","1"}
+               { "Dickey-Fuller & Box Ljung Test","2"}
             };
         }
         public string[,] getNameOfVectors()//returns the name of vectors needed for each analysis

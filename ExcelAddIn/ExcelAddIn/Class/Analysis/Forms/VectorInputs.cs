@@ -13,17 +13,18 @@ namespace ExcelAddIn.Class.Analysis.Forms
     public partial class VectorInputs : Form
     {
         string selectedAnalsys;
-        int numberOfVectorsUsed;
-        public VectorInputs(int numberOfVectors,string nameOfTheAnalisys)
+        int numberOfVectors;
+        string[] nameOfTheVectors;
+        public VectorInputs(int numberOfVectors,string nameOfTheAnalisys, string[] nameOfTheVectors)
         {
             InitializeComponent();
+            this.nameOfTheVectors = nameOfTheVectors;
+            this.numberOfVectors = numberOfVectors;
             showInputs(numberOfVectors);
-            numberOfVectorsUsed = numberOfVectors;
             this.TopMost = true;
             this.CenterToScreen();
             this.selectedAnalsys = nameOfTheAnalisys;
         }
-
         protected override void OnLoad(EventArgs e)
         {
             var btnVector1 = new Button();
@@ -80,8 +81,8 @@ namespace ExcelAddIn.Class.Analysis.Forms
             SendMessage(txtVector1.Handle, 0xd3, (IntPtr)2, (IntPtr)(btnVector1.Width << 16));
             base.OnLoad(e);
         }
-
         [System.Runtime.InteropServices.DllImport("user32.dll")]
+
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, IntPtr lp);
 
         private void btnSolve_Click(object sender, EventArgs e)
@@ -90,7 +91,7 @@ namespace ExcelAddIn.Class.Analysis.Forms
             {
                 Class.BertCalls call = new BertCalls();
                 string[] range = getRangeSelected(getNumberOfVisibleFields());
-                call.bertCalls("SeriesTiempo_Histograma", range);
+                call.bertCalls(selectedAnalsys, range);
             }
             else
             {
@@ -208,6 +209,7 @@ namespace ExcelAddIn.Class.Analysis.Forms
                     this.lblVector2.Visible = false;
                     this.txtVector2.Visible = false;
 
+
                     this.lblVector3.Visible = false;
                     this.txtVector3.Visible = false;
 
@@ -219,13 +221,17 @@ namespace ExcelAddIn.Class.Analysis.Forms
 
                     this.lblVector6.Visible = false;
                     this.txtVector6.Visible = false;
+
+                    this.lblVector1.Text = nameOfTheVectors[0];
                     break;
                 case 2:
                     this.lblVector1.Visible = true;
                     this.txtVector1.Visible = true;
+                    this.lblVector1.Text = nameOfTheVectors[0];
 
                     this.lblVector2.Visible = true;
                     this.txtVector2.Visible = true;
+                    this.lblVector2.Text = nameOfTheVectors[1];
 
                     this.lblVector3.Visible = false;
                     this.txtVector3.Visible = false;
@@ -242,12 +248,18 @@ namespace ExcelAddIn.Class.Analysis.Forms
                 case 3:
                     this.lblVector1.Visible = true;
                     this.txtVector1.Visible = true;
+                    this.lblVector1.Text = nameOfTheVectors[0];
+
 
                     this.lblVector2.Visible = true;
                     this.txtVector2.Visible = true;
+                    this.lblVector2.Text = nameOfTheVectors[1];
+
 
                     this.lblVector3.Visible = true;
                     this.txtVector3.Visible = true;
+                    this.lblVector3.Text = nameOfTheVectors[2];
+
 
                     this.lblVector4.Visible = false;
                     this.txtVector4.Visible = false;
@@ -261,15 +273,19 @@ namespace ExcelAddIn.Class.Analysis.Forms
                 case 4:
                     this.lblVector1.Visible = true;
                     this.txtVector1.Visible = true;
+                    this.lblVector1.Text = nameOfTheVectors[0];
 
                     this.lblVector2.Visible = true;
                     this.txtVector2.Visible = true;
+                    this.lblVector2.Text = nameOfTheVectors[1];
 
                     this.lblVector3.Visible = true;
                     this.txtVector3.Visible = true;
+                    this.lblVector3.Text = nameOfTheVectors[2];
 
                     this.lblVector4.Visible = true;
                     this.txtVector4.Visible = true;
+                    this.lblVector4.Text = nameOfTheVectors[3];
 
                     this.lblVector5.Visible = false;
                     this.txtVector5.Visible = false;
@@ -280,18 +296,23 @@ namespace ExcelAddIn.Class.Analysis.Forms
                 case 5:
                     this.lblVector1.Visible = true;
                     this.txtVector1.Visible = true;
+                    this.lblVector1.Text = nameOfTheVectors[0];
 
                     this.lblVector2.Visible = true;
                     this.txtVector2.Visible = true;
+                    this.lblVector2.Text = nameOfTheVectors[1];
 
                     this.lblVector3.Visible = true;
                     this.txtVector3.Visible = true;
+                    this.lblVector3.Text = nameOfTheVectors[2];
 
                     this.lblVector4.Visible = true;
                     this.txtVector4.Visible = true;
+                    this.lblVector4.Text = nameOfTheVectors[3];
 
                     this.lblVector5.Visible = true;
                     this.txtVector5.Visible = true;
+                    this.lblVector5.Text = nameOfTheVectors[4];
 
                     this.lblVector6.Visible = false;
                     this.txtVector6.Visible = false;
@@ -299,21 +320,27 @@ namespace ExcelAddIn.Class.Analysis.Forms
                 case 6:
                     this.lblVector1.Visible = true;
                     this.txtVector1.Visible = true;
+                    this.lblVector1.Text = nameOfTheVectors[0];
 
                     this.lblVector2.Visible = true;
                     this.txtVector2.Visible = true;
+                    this.lblVector2.Text = nameOfTheVectors[1];
 
                     this.lblVector3.Visible = true;
                     this.txtVector3.Visible = true;
+                    this.lblVector3.Text = nameOfTheVectors[2];
 
                     this.lblVector4.Visible = true;
                     this.txtVector4.Visible = true;
+                    this.lblVector4.Text = nameOfTheVectors[3];
 
                     this.lblVector5.Visible = true;
                     this.txtVector5.Visible = true;
+                    this.lblVector5.Text = nameOfTheVectors[4];
 
                     this.lblVector6.Visible = true;
-                    this.txtVector6.Visible = false;
+                    this.txtVector6.Visible = true;
+                    this.lblVector6.Text = nameOfTheVectors[5];
                     break;
                 default:
                     break;

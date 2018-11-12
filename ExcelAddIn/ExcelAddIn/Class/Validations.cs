@@ -53,18 +53,28 @@ namespace ExcelAddIn.Class
 
 
         //not programed yet
-        public string getNameOfVectors(string nameOfAnalysis, String[,] vectors)
+        public string[] getNameOfVectors(string nameOfAnalysis, String[,] vectors)
         {
+            List<string> vectorNames = new List<string>();
             for (int i = 0; i < 10; i++)
             {
                 string analysisName = vectors[i, 0];
                 if (analysisName.Equals(nameOfAnalysis))
                 {
-                    int number = Convert.ToInt16(vectors[i, 1]);
-                    return "";
+                    string vectorName = vectors[i, 1];
+                    vectorNames.Add(vectorName);
                 }
             }
-            return "";
+            int numberOfNames = Convert.ToInt32(vectorNames.Count);
+            string[] names = new string[numberOfNames];
+            int j = 0;
+            foreach (string name in vectorNames)
+            {
+                names[j] = name.ToString();
+                j++;
+            }
+
+            return names;
         }
 
 
