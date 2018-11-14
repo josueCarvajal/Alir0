@@ -198,6 +198,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "scfc";
+            this.ShowIcon = false;
             this.Text = "DataBaseWindow";
             this.Load += new System.EventHandler(this.scfc_Load);
             this.panel1.ResumeLayout(false);

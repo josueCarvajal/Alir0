@@ -20,7 +20,7 @@ namespace ExcelAddIn.DataBase
         {
             InitializeComponent();
             this.Show();
-           AddInstancesTocbInstances();
+            AddInstancesTocbInstances();
            
         }
 
@@ -32,24 +32,17 @@ namespace ExcelAddIn.DataBase
         private void AddInstancesTocbInstances()
         {
             this.Show();
-            this.Show();
-
-           
+            List<string> ListOfInstances= Conection.Installedinstances();
             
-            string[] instancias;
-            instancias = Conection.InstalledInstances();
-
-            foreach (string s in instancias)
+            if (ListOfInstances.Count != 0)
             {
-              cbInstances.Items.Add(@"(local)\" + s);
-
+                cbInstances.DataSource = ListOfInstances;
             }
-
-            if (cbInstances.Items.Count == 0)
+            else
             {
-              cbInstances.DataSource = Conection.Installedinstances();
+                MessageBox.Show("The aplication not found instances of SQL\n Make sure the SQL Server Browser service is activated");
             }
-
+          
         }
        
         private void cbInstances_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -151,11 +144,6 @@ namespace ExcelAddIn.DataBase
             }
             else { MessageBox.Show("You must select an item from the list"); }
                    
-        }
-
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnOk_Click(object sender, EventArgs e)
