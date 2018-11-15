@@ -85,8 +85,7 @@ namespace ExcelAddIn
             {
                 MessageBox.Show("There's no data selected");
             }
-                
-            
+                           
         }
 
         List<double> rangeToList(Microsoft.Office.Interop.Excel.Range inputRng)
@@ -160,6 +159,16 @@ namespace ExcelAddIn
             
             
         }
-        
+
+        public void InstallPackages(string Option)
+        {
+            if (Option == "1")
+            {
+                string functionName = "Instalar_Paquetes";
+                object resultado = Application.Run("BERT.Call", functionName);
+            }
+
+        }
+
     }
 }
