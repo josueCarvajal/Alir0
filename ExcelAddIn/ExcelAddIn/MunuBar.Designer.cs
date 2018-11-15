@@ -36,8 +36,8 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.RiALIRO = this.Factory.CreateRibbonGroup();
+            this.btnPackages = this.Factory.CreateRibbonButton();
             this.btnDataBase = this.Factory.CreateRibbonButton();
-            this.button1 = this.Factory.CreateRibbonButton();
             this.mCharts = this.Factory.CreateRibbonMenu();
             this.btnColumn = this.Factory.CreateRibbonButton();
             this.btnHistogram = this.Factory.CreateRibbonButton();
@@ -73,22 +73,22 @@
             // RiALIRO
             // 
             this.RiALIRO.Items.Add(this.btnDataBase);
-            this.RiALIRO.Items.Add(this.button1);
+            this.RiALIRO.Items.Add(this.btnPackages);
             this.RiALIRO.Items.Add(this.mCharts);
             this.RiALIRO.Label = "ALIRO";
             this.RiALIRO.Name = "RiALIRO";
+            // 
+            // btnPackages
+            // 
+            this.btnPackages.Label = "Packages";
+            this.btnPackages.Name = "btnPackages";
+            this.btnPackages.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnPackages_Click);
             // 
             // btnDataBase
             // 
             this.btnDataBase.Label = "SQL Query";
             this.btnDataBase.Name = "btnDataBase";
             this.btnDataBase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDataBase_Click);
-            // 
-            // button1
-            // 
-            this.button1.Label = "button1";
-            this.button1.Name = "button1";
-            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
             // mCharts
             // 
@@ -196,9 +196,9 @@
             this.CrossSectionalBtn.Name = "CrossSectionalBtn";
             this.CrossSectionalBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.CrossSectionalBtn_Click);
             // 
-            // Ribbon1
+            // MunuBar
             // 
-            this.Name = "Ribbon1";
+            this.Name = "MunuBar";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.tab1);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon1_Load);
@@ -221,7 +221,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup RiALIRO;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDataBase;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnPackages;
         internal Microsoft.Office.Tools.Ribbon.RibbonMenu mCharts;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHistogram;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnColumn;

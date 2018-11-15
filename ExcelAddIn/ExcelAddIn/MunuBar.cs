@@ -6,6 +6,8 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Ribbon;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
+using System.Windows.Forms;
+
 namespace ExcelAddIn
 {
     public partial class MunuBar
@@ -15,14 +17,10 @@ namespace ExcelAddIn
         {
 
         }
-        private void button1_Click(object sender, RibbonControlEventArgs e)
+        private void btnPackages_Click(object sender, RibbonControlEventArgs e)
         {
-
-
-
-
-            // Class.BertCalls bert = new Class.BertCalls();
-            // bert.Sumar();
+            Class.BertCalls Bert = new Class.BertCalls();
+            Bert.bertInstallPackages();
         }
 
         private void btnHistogram_Click(object sender, RibbonControlEventArgs e)
