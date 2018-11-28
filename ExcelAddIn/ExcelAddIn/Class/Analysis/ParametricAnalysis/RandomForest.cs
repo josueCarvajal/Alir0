@@ -19,20 +19,32 @@ namespace ExcelAddIn.Class.Analysis.ParametricAnalysis
         }
         public string[] getAnalysis()
         {
-            return null;
+            return new string[] {
+                "Random Forest"
+            };
         }
 
         public string[,] getNumberOfVectors()//returns the number vectors needed for each analysis
         {
-            return null;
+            return new string[,]
+            {
+               {"Random Forest","2"}
+             };
         }
         public string[,] getNameOfVectors()//returns the name of vectors needed for each analysis
         {
-            return null;
+            return new string[,]
+            {
+               {"Random Forest","Range"},
+               {"Random Forest","Species"}
+             };
         }
         public string[,] getFunctionName()
         {
-            return null;
+            return new string[,]
+            {
+               {"Random Forest","ML_RandomForrest"}
+             };
         }
     }
 }
