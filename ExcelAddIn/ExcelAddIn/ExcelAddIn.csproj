@@ -187,12 +187,13 @@
     <Compile Include="DataBase\DataBaseWindow.Designer.cs">
       <DependentUpon>DataBaseWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\ProgressBar.cs">
+    <Compile Include="ProgressBar\ProgressBarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataBase\ProgressBar.Designer.cs">
-      <DependentUpon>ProgressBar.cs</DependentUpon>
+    <Compile Include="ProgressBar\ProgressBarForm.Designer.cs">
+      <DependentUpon>ProgressBarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProgressBar\ProgressUpdatedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -205,8 +206,8 @@
     <EmbeddedResource Include="DataBase\DataBaseWindow.resx">
       <DependentUpon>DataBaseWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataBase\ProgressBar.resx">
-      <DependentUpon>ProgressBar.cs</DependentUpon>
+    <EmbeddedResource Include="ProgressBar\ProgressBarForm.resx">
+      <DependentUpon>ProgressBarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -250,6 +251,7 @@
   <ItemGroup>
     <None Include="Resources\matrix.png" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

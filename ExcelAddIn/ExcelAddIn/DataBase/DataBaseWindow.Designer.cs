@@ -100,7 +100,6 @@
             this.cbColumn.Name = "cbColumn";
             this.cbColumn.Size = new System.Drawing.Size(163, 21);
             this.cbColumn.TabIndex = 4;
-            this.cbColumn.SelectedIndexChanged += new System.EventHandler(this.cbColumn_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -154,7 +153,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbColumn);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(29, 12);
+            this.panel1.Location = new System.Drawing.Point(28, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 278);
             this.panel1.TabIndex = 11;
@@ -179,7 +178,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(313, 309);
+            this.btnOk.Location = new System.Drawing.Point(312, 305);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(95, 23);
             this.btnOk.TabIndex = 16;
@@ -192,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(437, 347);
+            this.ClientSize = new System.Drawing.Size(437, 336);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -200,7 +199,6 @@
             this.Name = "scfc";
             this.ShowIcon = false;
             this.Text = "DataBaseWindow";
-            this.Load += new System.EventHandler(this.scfc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

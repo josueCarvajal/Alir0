@@ -15,28 +15,86 @@ namespace ExcelAddIn.DataBase
         DataBaseConection Conection = new DataBaseConection();
         List<string> EmptyList = new List<string>();
         List<string> AuxiliarList = new List<string>();
-
+      
         public scfc()
         {
+            
             InitializeComponent();
+            DisableEnableUI();
             this.Show();
-            AddInstancesTocbInstances();
+            StartForm();
+          
+        }
+
+        public void DisableEnableUI()
+        {
+            DisableEnableComboBox(cbInstances);
+            DisableEnableComboBox(CbDataBaseName);
+            DisableEnableComboBox(cbTableName);
+            DisableEnableComboBox(cbColumn);
+            //disable button
+            DisableEnableButton(btnAdd);
+            DisableEnableButton(btnRemove);
+            DisableEnableButton(btnOk);
+        }
+        
+        public void DisableEnableComboBox(ComboBox combobox)
+        {
+
+            if (combobox.InvokeRequired)
+                combobox.Invoke((MethodInvoker)delegate ()
+                {
+                    if (combobox.Enabled == true)
+                    {
+                        combobox.Enabled = false;
+                    }
+                    else { combobox.Enabled = true; }
+                });
+        }
+
+        public void DisableEnableButton(Button button) {
+
+            if (button.InvokeRequired)
+                button.Invoke((MethodInvoker)delegate ()
+                {
+                    if (button.Enabled == true)
+                    {
+                        button.Enabled = false;
+                    }
+                    else { button.Enabled = true; }
+                });
+        }
+      
+
+        public void StartForm() {
+            DisableEnableUI();
+            ProgressBar.ProgressBarForm ProgressBar = new ProgressBar.ProgressBarForm();
+            scfc ObjectDatabase = this;
+            ProgressBar.ProgressBarFormBackgroundWorker.RunWorkerAsync(ObjectDatabase);
            
         }
+
 
         public void CleanColumnList()
         {
             LbSelectedColumns.Items.Clear();
         }
 
-        private void AddInstancesTocbInstances()
+        public void AddInstancesTocbInstances()
         {
-            this.Show();
+       
             List<string> ListOfInstances= Conection.Installedinstances();
             
             if (ListOfInstances.Count != 0)
             {
-                cbInstances.DataSource = ListOfInstances;
+                if (cbInstances.InvokeRequired)
+                    cbInstances.Invoke((MethodInvoker)delegate ()
+                    {
+                        cbInstances.DataSource = ListOfInstances;
+                    });
+                else { cbInstances.DataSource = ListOfInstances; }
+
+                
             }
             else
             {
@@ -97,11 +155,6 @@ namespace ExcelAddIn.DataBase
             }
         }
 
-        private void cbColumn_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (cbColumn.SelectedItem != null)
@@ -135,7 +188,6 @@ namespace ExcelAddIn.DataBase
             return Exists;
         }
 
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
            if (LbSelectedColumns.SelectedIndex != -1)
@@ -148,15 +200,49 @@ namespace ExcelAddIn.DataBase
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            DisableEnableUI();
+           ProgressBar.ProgressBarForm ProgressBar = new ProgressBar.ProgressBarForm();
+            scfc ObjectDatabase = this;
+            ProgressBar.BGWQueryToDataBase.RunWorkerAsync(ObjectDatabase);
+            this.Show();
+           
+        }
 
+        public void QueryToDatabase()
+        {
             if (validateOperation(cbColumn))
             {
-                string Instances = cbInstances.SelectedItem.ToString();
-                string DataBase = CbDataBaseName.SelectedItem.ToString();
-                string Table = cbTableName.SelectedItem.ToString();
+                string Instances="";
+                string DataBase = ""; 
+                string Table = ""; 
+
+                
+                if (cbInstances.InvokeRequired)
+                    cbInstances.Invoke((MethodInvoker)delegate ()
+                    {
+                        Instances = cbInstances.SelectedItem.ToString();
+                    });
+                else { Instances = cbInstances.SelectedItem.ToString(); }
+
+                if (CbDataBaseName.InvokeRequired)
+                    CbDataBaseName.Invoke((MethodInvoker)delegate ()
+                    {
+                        DataBase = CbDataBaseName.SelectedItem.ToString();
+                    });
+                else { DataBase = CbDataBaseName.SelectedItem.ToString(); }
+
+                if (cbTableName.InvokeRequired)
+                    cbTableName.Invoke((MethodInvoker)delegate ()
+                    {
+                        Table = cbTableName.SelectedItem.ToString();
+                    });
+                else { Table = cbTableName.SelectedItem.ToString(); }
+
+
 
                 List<string> SQLquery = new List<string>();
                 List<string> ColumnIndex = new List<string>();
+                
                 ColumnIndex.Add("A");
                 ColumnIndex.Add("B");
                 ColumnIndex.Add("C");
@@ -181,9 +267,6 @@ namespace ExcelAddIn.DataBase
                     Globals.ThisAddIn.FillCellsFromDataBase(SQLquery, ColumnIndex[i]);
                 }
             }
-            
-
-
         }
 
         public Boolean validateOperation(ComboBox cbColumns) {
@@ -203,21 +286,6 @@ namespace ExcelAddIn.DataBase
 
             return itisValited;
         }
-        private void scfc_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
-
-        //  ProgressBar bg = new ProgressBar();
-
-
-
-
 
     }
 }
