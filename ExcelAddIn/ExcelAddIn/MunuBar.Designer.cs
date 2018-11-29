@@ -36,11 +36,8 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.RiALIRO = this.Factory.CreateRibbonGroup();
-            this.btnPackages = this.Factory.CreateRibbonButton();
             this.btnDataBase = this.Factory.CreateRibbonButton();
-            this.mCharts = this.Factory.CreateRibbonMenu();
-            this.btnColumn = this.Factory.CreateRibbonButton();
-            this.btnHistogram = this.Factory.CreateRibbonButton();
+            this.btnPackages = this.Factory.CreateRibbonButton();
             this.TimeSeriesGroup = this.Factory.CreateRibbonGroup();
             this.TimeSeriesBtn = this.Factory.CreateRibbonButton();
             this.btnHoltWinters = this.Factory.CreateRibbonButton();
@@ -54,6 +51,7 @@
             this.BinaryVariableBtn = this.Factory.CreateRibbonButton();
             this.NonParametricGroup = this.Factory.CreateRibbonGroup();
             this.CrossSectionalBtn = this.Factory.CreateRibbonButton();
+            this.btn_faqs = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.RiALIRO.SuspendLayout();
             this.TimeSeriesGroup.SuspendLayout();
@@ -74,42 +72,21 @@
             // 
             this.RiALIRO.Items.Add(this.btnDataBase);
             this.RiALIRO.Items.Add(this.btnPackages);
-            this.RiALIRO.Items.Add(this.mCharts);
+            this.RiALIRO.Items.Add(this.btn_faqs);
             this.RiALIRO.Label = "ALIRO";
             this.RiALIRO.Name = "RiALIRO";
             // 
-            // btnPackages
-            // 
-            this.btnPackages.Label = "Packages";
-            this.btnPackages.Name = "btnPackages";
-            this.btnPackages.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnPackages_Click);
-            // 
             // btnDataBase
             // 
-            this.btnDataBase.Label = "SQL Query";
+            this.btnDataBase.Label = "Import SQL data";
             this.btnDataBase.Name = "btnDataBase";
             this.btnDataBase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDataBase_Click);
             // 
-            // mCharts
+            // btnPackages
             // 
-            this.mCharts.Items.Add(this.btnColumn);
-            this.mCharts.Items.Add(this.btnHistogram);
-            this.mCharts.Label = "Charts";
-            this.mCharts.Name = "mCharts";
-            // 
-            // btnColumn
-            // 
-            this.btnColumn.Label = "Column";
-            this.btnColumn.Name = "btnColumn";
-            this.btnColumn.ShowImage = true;
-            this.btnColumn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnColumn_Click);
-            // 
-            // btnHistogram
-            // 
-            this.btnHistogram.Label = "Histogram";
-            this.btnHistogram.Name = "btnHistogram";
-            this.btnHistogram.ShowImage = true;
-            this.btnHistogram.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnHistogram_Click);
+            this.btnPackages.Label = "Install Packages";
+            this.btnPackages.Name = "btnPackages";
+            this.btnPackages.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnPackages_Click);
             // 
             // TimeSeriesGroup
             // 
@@ -162,24 +139,28 @@
             // 
             // DecisionTreesButton
             // 
+            this.DecisionTreesButton.Enabled = false;
             this.DecisionTreesButton.Label = "Decision trees";
             this.DecisionTreesButton.Name = "DecisionTreesButton";
             this.DecisionTreesButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.DecisionTreesButton_Click);
             // 
             // ClusterAnalysisBtn
             // 
+            this.ClusterAnalysisBtn.Enabled = false;
             this.ClusterAnalysisBtn.Label = "Cluster Analysis";
             this.ClusterAnalysisBtn.Name = "ClusterAnalysisBtn";
             this.ClusterAnalysisBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ClusterAnalysisBtn_Click);
             // 
             // DiscriminantAnalysisBtn
             // 
+            this.DiscriminantAnalysisBtn.Enabled = false;
             this.DiscriminantAnalysisBtn.Label = "Discriminant analysis";
             this.DiscriminantAnalysisBtn.Name = "DiscriminantAnalysisBtn";
             this.DiscriminantAnalysisBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.DiscriminantAnalysisBtn_Click);
             // 
             // BinaryVariableBtn
             // 
+            this.BinaryVariableBtn.Enabled = false;
             this.BinaryVariableBtn.Label = "Binary variable models";
             this.BinaryVariableBtn.Name = "BinaryVariableBtn";
             this.BinaryVariableBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BinaryVariableBtn_Click);
@@ -192,9 +173,16 @@
             // 
             // CrossSectionalBtn
             // 
+            this.CrossSectionalBtn.Enabled = false;
             this.CrossSectionalBtn.Label = "Cross Sectional";
             this.CrossSectionalBtn.Name = "CrossSectionalBtn";
             this.CrossSectionalBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.CrossSectionalBtn_Click);
+            // 
+            // btn_faqs
+            // 
+            this.btn_faqs.Enabled = false;
+            this.btn_faqs.Label = "FAQs";
+            this.btn_faqs.Name = "btn_faqs";
             // 
             // MunuBar
             // 
@@ -222,9 +210,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup RiALIRO;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDataBase;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnPackages;
-        internal Microsoft.Office.Tools.Ribbon.RibbonMenu mCharts;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHistogram;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnColumn;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup TimeSeriesGroup;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton TimeSeriesBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton RandomForestBtn;
@@ -238,6 +223,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BinaryVariableBtn;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup NonParametricGroup;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton CrossSectionalBtn;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_faqs;
     }
 
     partial class ThisRibbonCollection

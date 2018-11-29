@@ -72,7 +72,6 @@ C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\
 C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.scfc.resources
 C:\Users\CAMir\OneDrive\Documentos\GitHub\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources
 C:\Users\josue\source\repos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.scfc.resources
-C:\Users\josue\source\repos\Alir0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.DataBase.ProgressBar.resources
 C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Class.AnalysisGUI.resources
 C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.MunuBar.resources
 C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Class.Analysis.Forms.VectorInputs.resources
@@ -110,3 +109,4 @@ C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\bin\Debug\
 C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
 C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.ProgressBar.ProgressBarForm.resources
 C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
+C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.ProgressBar.ProgressBarForm.resources
