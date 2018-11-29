@@ -156,6 +156,7 @@ namespace ExcelAddIn
             {
                 currentWorkBook.Range[columnindex + (i + 1)].Value2 = DataBaseQuery[i];
             }
+<<<<<<< HEAD
             
             
         }
@@ -170,5 +171,11 @@ namespace ExcelAddIn
 
         }
 
+=======
+            currentWorkBook.Columns.AutoFit();
+
+        }
+        
+>>>>>>> old_database
     }
 }
