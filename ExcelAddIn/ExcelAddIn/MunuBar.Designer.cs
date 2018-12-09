@@ -38,6 +38,7 @@
             this.RiALIRO = this.Factory.CreateRibbonGroup();
             this.btnDataBase = this.Factory.CreateRibbonButton();
             this.btnPackages = this.Factory.CreateRibbonButton();
+            this.btn_faqs = this.Factory.CreateRibbonButton();
             this.TimeSeriesGroup = this.Factory.CreateRibbonGroup();
             this.TimeSeriesBtn = this.Factory.CreateRibbonButton();
             this.btnHoltWinters = this.Factory.CreateRibbonButton();
@@ -51,7 +52,6 @@
             this.BinaryVariableBtn = this.Factory.CreateRibbonButton();
             this.NonParametricGroup = this.Factory.CreateRibbonGroup();
             this.CrossSectionalBtn = this.Factory.CreateRibbonButton();
-            this.btn_faqs = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.RiALIRO.SuspendLayout();
             this.TimeSeriesGroup.SuspendLayout();
@@ -87,6 +87,12 @@
             this.btnPackages.Label = "Install Packages";
             this.btnPackages.Name = "btnPackages";
             this.btnPackages.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnPackages_Click);
+            // 
+            // btn_faqs
+            // 
+            this.btn_faqs.Label = "FAQs";
+            this.btn_faqs.Name = "btn_faqs";
+            this.btn_faqs.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_faqs_Click);
             // 
             // TimeSeriesGroup
             // 
@@ -177,12 +183,6 @@
             this.CrossSectionalBtn.Label = "Cross Sectional";
             this.CrossSectionalBtn.Name = "CrossSectionalBtn";
             this.CrossSectionalBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.CrossSectionalBtn_Click);
-            // 
-            // btn_faqs
-            // 
-            this.btn_faqs.Enabled = false;
-            this.btn_faqs.Label = "FAQs";
-            this.btn_faqs.Name = "btn_faqs";
             // 
             // MunuBar
             // 

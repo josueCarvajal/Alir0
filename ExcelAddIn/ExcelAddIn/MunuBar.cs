@@ -110,5 +110,10 @@ namespace ExcelAddIn
             Class.AnalysisGUI analysisWindow = new Class.AnalysisGUI(title, description, analysis, numberOfVectors, nameOfVectors, functionName);
         }
 
+        private void btn_faqs_Click(object sender, RibbonControlEventArgs e)
+        {
+            Help.HelpWindow helpWindow = new Help.HelpWindow();
+           
+        }
     }
 }

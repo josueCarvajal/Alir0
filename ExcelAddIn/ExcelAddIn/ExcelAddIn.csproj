@@ -187,6 +187,12 @@
     <Compile Include="DataBase\DataBaseWindow.Designer.cs">
       <DependentUpon>DataBaseWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help\HelpWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\HelpWindow.Designer.cs">
+      <DependentUpon>HelpWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBar\ProgressBarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataBase\DataBaseWindow.resx">
       <DependentUpon>DataBaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\HelpWindow.resx">
+      <DependentUpon>HelpWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBar\ProgressBarForm.resx">
       <DependentUpon>ProgressBarForm.cs</DependentUpon>
@@ -240,6 +249,14 @@
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
+    <None Include="PDF\Common errors.pdf" />
+    <None Include="PDF\DataBase Module.pdf" />
+    <None Include="PDF\First steps in ALIR0.pdf" />
+    <None Include="PDF\Time series module.pdf" />
+    <None Include="Resources\Common errors.pdf" />
+    <None Include="Resources\DataBase Module.pdf" />
+    <None Include="Resources\First steps in ALIR0.pdf" />
+    <None Include="Resources\Time series module.pdf" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
@@ -251,7 +268,25 @@
   <ItemGroup>
     <None Include="Resources\matrix.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

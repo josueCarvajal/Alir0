@@ -110,3 +110,9 @@ C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\bin\Debug\
 C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.ProgressBar.ProgressBarForm.resources
 C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.CopyComplete
 C:\Users\josue\Source\Repos\ALIR0\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.ProgressBar.ProgressBarForm.resources
+C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.csproj.ResolveComReference.cache
+C:\Users\KURISUTIAN\Documents\Practica\practica\ExcelAddIn\ExcelAddIn\obj\Debug\ExcelAddIn.Help.HelpWindow.resources
