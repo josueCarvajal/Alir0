@@ -7,6 +7,8 @@ using Microsoft.Office.Tools.Ribbon;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 namespace ExcelAddIn
 {
@@ -112,8 +114,11 @@ namespace ExcelAddIn
 
         private void btn_faqs_Click(object sender, RibbonControlEventArgs e)
         {
-            Help.HelpWindow helpWindow = new Help.HelpWindow();
-           
+            //Help.HelpWindow helpWindow = new Help.HelpWindow();
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\FAQ.pdf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+
+            Process.Start(FileName);
         }
     }
 }

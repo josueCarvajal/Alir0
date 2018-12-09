@@ -187,12 +187,6 @@
     <Compile Include="DataBase\DataBaseWindow.Designer.cs">
       <DependentUpon>DataBaseWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Help\HelpWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Help\HelpWindow.Designer.cs">
-      <DependentUpon>HelpWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProgressBar\ProgressBarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,9 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataBase\DataBaseWindow.resx">
       <DependentUpon>DataBaseWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Help\HelpWindow.resx">
-      <DependentUpon>HelpWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBar\ProgressBarForm.resx">
       <DependentUpon>ProgressBarForm.cs</DependentUpon>
@@ -249,14 +240,7 @@
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="PDF\Common errors.pdf" />
-    <None Include="PDF\DataBase Module.pdf" />
-    <None Include="PDF\First steps in ALIR0.pdf" />
-    <None Include="PDF\Time series module.pdf" />
-    <None Include="Resources\Common errors.pdf" />
-    <None Include="Resources\DataBase Module.pdf" />
-    <None Include="Resources\First steps in ALIR0.pdf" />
-    <None Include="Resources\Time series module.pdf" />
+    <None Include="Resources\FAQ.pdf" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
