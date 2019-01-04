@@ -7,14 +7,14 @@ ALIRO is a free BERT-based tool to use custom R code in different analysis, incl
 
 ## How ALIRO born?
 
-ALIRO born in Costa Rica thanks to Minor Bonilla, CEO at [Buklolab](http://www.buklolab.com/). We build this version while doing our business practice at this company, to graduate from Bachelor's degree from bussiness computing
+ALIRO born in Costa Rica thanks to Minor Bonilla, CEO at [Buklolab](http://www.buklolab.com/). We build this version while doing our business practice at this company, to graduate from Bachelor's degree from bussiness computing.
 
 ## What is our objective?
 Our objective is to bring a scalable free-tool to use custom **R** code in excel, so everyone who have knowledge in excel can use this tool without a lot of technical skills.
 
 
 
-## HOW TO USE 
+## HOW TO USE?
 Note: **__ALIRO _STILL_ IN DEV__** some bugs will occur - See Common errors section if something went wrong
 
 Before start: ALIRO is based on BERT and R, so we need this two dependencies to continue with ALIRO instalation. Do not worry, the installer will help you in this process.
